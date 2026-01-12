@@ -1,0 +1,3 @@
+#!/bin/sh
+set -eu
+echo "Beaver platform (prototype) 0.1.0"

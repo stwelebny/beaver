@@ -1,0 +1,18 @@
+Source: beaver-core-config
+Section: admin
+Priority: optional
+Maintainer: Beaver Project <stefan@welebny.com>
+Rules-Requires-Root: no
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Homepage: https://github.com/stwelebny/beaver
+
+Package: beaver-core-config
+Architecture: all
+Depends:
+ ${misc:Depends},
+ systemd,
+ brltty
+Description: Beaver core configuration, scripts, and first-boot setup
+ This package provides Beaver-specific configuration, first-boot onboarding,
+ diagnostics commands, and userdata/home separation setup.
