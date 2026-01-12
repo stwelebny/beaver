@@ -1,0 +1,19 @@
+services:
+  beaver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: beaver
+    ports:
+      - "2222:22"
+    volumes:
+      # Persistent "userdata" for tests and for pilot users
+      - beaver_userdata:/userdata
+
+      # Mount SSH authorized_keys for the beaver user (read-only)
+      # Put a public key at: ./ssh/authorized_keys
+      - ./ssh/authorized_keys:/userdata/home/beaver/.ssh/authorized_keys:ro
+    restart: unless-stopped
+
+volumes:
+  beaver_userdata:
