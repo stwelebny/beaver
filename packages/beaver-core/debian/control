@@ -10,6 +10,7 @@ Homepage: https://github.com/stwelebny/beaver
 Package: beaver-core
 Architecture: all
 Depends:
+ ${misc:Depends},
  brltty,
  locales,
  kbd,
@@ -38,7 +39,7 @@ Depends:
  file,
  bc,
  vim-tiny,
- nano
+ nano,
  beaver-core-config
 Recommends:
  openssh-client
