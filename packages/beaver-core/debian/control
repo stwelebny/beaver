@@ -1,7 +1,7 @@
 Source: beaver-core
 Section: metapackages
 Priority: optional
-Maintainer: Beaver Project <you@example.com>
+Maintainer: Beaver Project <stefan@welebny.com>
 Rules-Requires-Root: no
 Build-Depends: debhelper-compat (= 13)
 Standards-Version: 4.6.2
