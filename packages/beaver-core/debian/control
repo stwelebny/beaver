@@ -35,7 +35,6 @@ Depends:
  procps,
  htop,
  strace,
- ltrace,
  file,
  bc,
  vim-tiny,
