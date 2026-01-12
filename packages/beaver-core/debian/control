@@ -39,6 +39,7 @@ Depends:
  bc,
  vim-tiny,
  nano
+ beaver-core-config
 Recommends:
  openssh-client
 Description: Beaver platform core (braille-first, terminal-only)
