@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+dpkg-query -W -f='${Package}\t${Version}\n' beaver-core beaver-core-config 2>/dev/null \
+  | sed 's/\t/ /'
