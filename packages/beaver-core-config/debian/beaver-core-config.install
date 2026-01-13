@@ -1,2 +1,3 @@
 usr/sbin/beaver-onboard usr/sbin/
 usr/bin/beaver-version usr/bin/
+usr/bin/beaver usr/bin

@@ -1,0 +1,50 @@
+#!/bin/sh
+
+cmd="$1"
+shift || true
+
+case "$cmd" in
+  "" | help)
+    cat <<'EOF'
+Beaver – Braille-first Linux environment
+
+Core:
+  beaver              Show this help
+  beaver version      Show installed Beaver components
+  beaver onboard      First-time setup and checks
+
+AI:
+  beaver-ai ask "text"
+  beaver-ai chat
+
+Internet:
+  lynx                Text-based web browser
+
+Mail:
+  mbsync -a           Sync mail
+  neomutt             Read and write mail
+  msmtp               Send mail (used by neomutt)
+
+Social:
+  toot                Mastodon client
+
+System:
+  ssh, vi, tmux
+
+Type: beaver help <topic>
+Topics: ai, mail, internet, social
+EOF
+    ;;
+  version)
+    exec beaver-version
+    ;;
+  onboard)
+    exec beaver-onboard "$@"
+    ;;
+  *)
+    echo "Unknown command: $cmd"
+    echo
+    echo "Type: beaver help"
+    exit 1
+    ;;
+esac
