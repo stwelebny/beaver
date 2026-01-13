@@ -1,50 +1,162 @@
 #!/bin/sh
+set -eu
+
+have() { command -v "$1" >/dev/null 2>&1; }
 
 cmd="${1:-}"
-[ "$#" -gt 0 ] && shift
+if [ "$#" -gt 0 ]; then
+  shift
+fi
 
-case "$cmd" in
-  "" | help)
+show_main_help() {
+  echo "Beaver – Braille-first Linux environment (terminal-only)"
+  echo
+  echo "Beaver commands:"
+  echo "  beaver                 Show this help"
+  echo "  beaver help [topic]    Help for a topic"
+  echo "  beaver version         Show Beaver component versions"
+  echo "  beaver onboard [...]   Initialize/check persistent userdata"
+  echo
+  echo "Installed tools:"
+  have beaver-ai   && echo "  beaver-ai              AI client"
+  have lynx        && echo "  lynx                  Web (text browser)"
+  have neomutt     && echo "  neomutt               Mail reader"
+  have mbsync      && echo "  mbsync                Mail sync (isync)"
+  have msmtp       && echo "  msmtp                 SMTP sender"
+  have toot        && echo "  toot                  Mastodon client"
+  have ssh         && echo "  ssh                   Remote login client"
+  echo
+  echo "Topics:"
+  echo "  ai, internet, mail, social, ssh, storage"
+}
+
+help_ai() {
+  if have beaver-ai; then
     cat <<'EOF'
-Beaver – Braille-first Linux environment
-
-Core:
-  beaver              Show this help
-  beaver version      Show installed Beaver components
-  beaver onboard      First-time setup and checks
-
-AI:
-  beaver-ai ask "text"
+AI (beaver-ai):
+  beaver-ai ask "question"
   beaver-ai chat
 
-Internet:
-  lynx                Text-based web browser
+Config:
+  ~/.config/beaver/ai.env
+    OPENAI_API_KEY="..."
+    BEAVER_AI_MODEL="..."
 
-Mail:
-  mbsync -a           Sync mail
-  neomutt             Read and write mail
-  msmtp               Send mail (used by neomutt)
-
-Social:
-  toot                Mastodon client
-
-System:
-  ssh, vi, tmux
-
-Type: beaver help <topic>
-Topics: ai, mail, internet, social
+Tip:
+  If you see an API error, print raw output by re-running the command.
 EOF
+  else
+    echo "AI: beaver-ai is not installed."
+  fi
+}
+
+help_internet() {
+  if have lynx; then
+    cat <<'EOF'
+Internet (lynx):
+  lynx
+  lynx https://example.com
+EOF
+  else
+    echo "Internet: lynx is not installed."
+  fi
+}
+
+help_mail() {
+  if have neomutt || have mbsync || have msmtp; then
+    echo "Mail:"
+    have mbsync  && echo "  mbsync -a        Sync IMAP to Maildir (isync)"
+    have neomutt && echo "  neomutt          Read/write mail"
+    have msmtp   && echo "  msmtp            Send SMTP (often used by neomutt)"
+    echo
+    echo "Config files (typical):"
+    echo "  ~/.mbsyncrc"
+    echo "  ~/.msmtprc"
+    echo "  ~/.config/neomutt/"
+  else
+    echo "Mail: tools not installed (neomutt/isync/msmtp)."
+  fi
+}
+
+help_social() {
+  if have toot; then
+    cat <<'EOF'
+Social (toot):
+  toot tui
+  toot notifications
+EOF
+  else
+    echo "Social: toot is not installed."
+  fi
+}
+
+help_ssh() {
+  if have ssh; then
+    cat <<'EOF'
+SSH:
+  ssh user@host
+  ssh -p 2222 beaver@localhost    (your local Docker container)
+EOF
+  else
+    echo "SSH client not found."
+  fi
+}
+
+help_storage() {
+  cat <<'EOF'
+Storage / persistence:
+  Persistent user data lives under /userdata (Docker volume or disk partition).
+  Home is expected at /userdata/home/<user>.
+  beaver onboard checks/creates this layout.
+EOF
+}
+
+show_topic_help() {
+  topic="${1:-}"
+  case "$topic" in
+    ai)       help_ai ;;
+    internet) help_internet ;;
+    mail)     help_mail ;;
+    social)   help_social ;;
+    ssh)      help_ssh ;;
+    storage)  help_storage ;;
+    ""|*)
+      echo "Unknown topic: ${topic:-<none>}"
+      echo "Topics: ai, internet, mail, social, ssh, storage"
+      exit 1
+      ;;
+  esac
+}
+
+case "$cmd" in
+  "" )
+    show_main_help
     ;;
-  version)
-    exec beaver-version
+  help )
+    show_topic_help "${1:-}"
     ;;
-  onboard)
-    exec beaver-onboard "$@"
+  version )
+    if have beaver-version; then
+      exec beaver-version
+    else
+      echo "beaver-version not installed."
+      exit 1
+    fi
     ;;
-  *)
+  onboard )
+    if have beaver-onboard; then
+      exec beaver-onboard "$@"
+    elif [ -x /usr/sbin/beaver-onboard ]; then
+      exec /usr/sbin/beaver-onboard "$@"
+    else
+      echo "beaver-onboard not installed."
+      exit 1
+    fi
+    ;;
+  * )
     echo "Unknown command: $cmd"
     echo
-    echo "Type: beaver help"
+    show_main_help
     exit 1
     ;;
 esac
