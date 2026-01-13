@@ -99,7 +99,7 @@ call_openai() {
 
   curl -sS https://api.openai.com/v1/responses \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer $OPENAI_API_KEY"
+    -H "Authorization: Bearer $OPENAI_API_KEY" \
     -d "$payload"
 }
 
