@@ -81,10 +81,17 @@ hist_compact() {
 }
 
 make_input_from_history() {
-  # Convert last messages into Responses API input format:
-  # input: [ {role:"user", content:[{type:"input_text", text:"..."}]}, ... ]
-  tail -n "$HIST_MAX" "$HIST" \
-    | jq -s 'map({role:.role, content:[{type:"input_text", text:.content}]})'
+  tail -n "$HIST_MAX" "$HIST" | jq -s '
+    map(
+      if .role == "assistant" then
+        { role: "assistant", content: [ { type: "output_text", text: .content } ] }
+      elif .role == "system" then
+        { role: "system", content: [ { type: "input_text", text: .content } ] }
+      else
+        { role: "user", content: [ { type: "input_text", text: .content } ] }
+      end
+    )
+  '
 }
 
 call_openai() {
