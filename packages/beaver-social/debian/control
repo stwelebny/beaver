@@ -1,0 +1,13 @@
+Source: beaver-social
+Section: metapackages
+Priority: optional
+Maintainer: SW <stefan@welebny.com>
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Build-Depends: debhelper-compat (= 13)
+
+Package: beaver-social
+Architecture: all
+Depends: ${misc:Depends}, toot
+Description: Beaver social tools (Mastodon CLI)
+ Installs toot, a terminal Mastodon client suitable for Braille-first workflows.

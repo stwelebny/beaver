@@ -41,7 +41,7 @@ Depends:
  nano,
  beaver-core-config
 Recommends:
- openssh-client
+ openssh-client, beaver-internet, beaver-mail, beaver-social
 Description: Beaver platform core (braille-first, terminal-only)
  Beaver is a braille-first, terminal-only platform built on Raspberry Pi OS Lite.
  .

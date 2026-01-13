@@ -31,6 +31,23 @@ RUN dpkg-buildpackage -us -uc
 WORKDIR /src/packages/beaver-core
 RUN dpkg-buildpackage -us -uc
 
+# Build beaver-ai
+WORKDIR /src/packages/beaver-ai
+RUN dpkg-buildpackage -us -uc
+
+# Build beaver-internet
+WORKDIR /src/packages/beaver-internet
+RUN dpkg-buildpackage -us -uc
+
+# Build beaver-social
+WORKDIR /src/packages/beaver-social
+RUN dpkg-buildpackage -us -uc
+
+# Build beaver-mail
+WORKDIR /src/packages/beaver-mail
+RUN dpkg-buildpackage -us -uc
+
+
 # Collect artifacts
 WORKDIR /out
 RUN set -eu; \

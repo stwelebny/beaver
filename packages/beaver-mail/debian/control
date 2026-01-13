@@ -1,0 +1,14 @@
+Source: beaver-mail
+Section: metapackages
+Priority: optional
+Maintainer: SW <stefan@welebny.com>
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Build-Depends: debhelper-compat (= 13)
+
+Package: beaver-mail
+Architecture: all
+Depends: ${misc:Depends}, neomutt, isync, msmtp, ca-certificates
+Description: Beaver mail stack (neomutt + mbsync + msmtp)
+ Installs a Braille-friendly, terminal-only mail stack:
+ neomutt for reading, isync/mbsync for IMAP sync, and msmtp for sending.
