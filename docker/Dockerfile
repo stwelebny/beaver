@@ -47,6 +47,10 @@ RUN dpkg-buildpackage -us -uc
 WORKDIR /src/packages/beaver-mail
 RUN dpkg-buildpackage -us -uc
 
+# Build beaver meta package
+WORKDIR /src/packages/beaver
+RUN dpkg-buildpackage -us -uc
+
 
 # Collect artifacts
 WORKDIR /out

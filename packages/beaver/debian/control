@@ -1,0 +1,22 @@
+Source: beaver
+Section: metapackages
+Priority: optional
+Maintainer: SW <stefan@welebny.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+
+Package: beaver
+Architecture: all
+Depends:
+ beaver-core,
+ beaver-core-config,
+ beaver-mail,
+ beaver-social,
+ beaver-internet,
+ ${misc:Depends}
+Recommends:
+ beaver-ai
+Description: Beaver meta-package (braille-first, terminal-only) for Raspberry Pi
+ Installs the full Beaver stack by depending on the core and feature-layer
+ packages. This package contains no files itself.
