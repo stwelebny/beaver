@@ -9,7 +9,7 @@ It builds on standard Debian Linux tools and focuses on:
 - full usability over SSH, serial, or local console
 
 BEAVER is not a new operating system.
-It installs cleanly **on existing Debian-based systems** (including Raspberry Pi OS), tested on Debain bookworm.
+It installs cleanly **on existing Debian-based systems** (including Raspberry Pi OS), tested on Debian bookworm.
 
 BEAVER IS IN BETA TEST STATUS. Feedback is welcome.
 ---
