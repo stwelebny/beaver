@@ -15,7 +15,6 @@ show_main_help() {
   echo "  beaver                 Show this help"
   echo "  beaver help [topic]    Help for a topic"
   echo "  beaver version         Show Beaver component versions"
-  echo "  beaver onboard [...]   Initialize/check persistent userdata"
   echo
   echo "Installed tools:"
   have beaver-ai   && echo "  beaver-ai              AI client"
@@ -140,16 +139,6 @@ case "$cmd" in
       exec beaver-version
     else
       echo "beaver-version not installed."
-      exit 1
-    fi
-    ;;
-  onboard )
-    if have beaver-onboard; then
-      exec beaver-onboard "$@"
-    elif [ -x /usr/sbin/beaver-onboard ]; then
-      exec /usr/sbin/beaver-onboard "$@"
-    else
-      echo "beaver-onboard not installed."
       exit 1
     fi
     ;;
