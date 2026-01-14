@@ -1,4 +1,4 @@
-# BEAVER
+# BEAVER (BETA STATUS)
 
 **BEAVER** is a **Braille-first, terminal-only Linux environment** designed for blind and especially deaf-blind users.
 
