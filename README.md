@@ -1,4 +1,4 @@
-# BEAVER (BETA STATUS)
+# BEAVER
 
 **BEAVER** is a **Braille-first, terminal-only Linux environment** designed for blind and especially deaf-blind users.
 
@@ -9,8 +9,9 @@ It builds on standard Debian Linux tools and focuses on:
 - full usability over SSH, serial, or local console
 
 BEAVER is not a new operating system.
-It installs cleanly **on existing Debian-based systems** (including Raspberry Pi OS).
+It installs cleanly **on existing Debian-based systems** (including Raspberry Pi OS), tested on Debain bookworm.
 
+BEAVER IS IN BETA TEST STATUS. Feedback is welcome.
 ---
 
 ## Philosophy
