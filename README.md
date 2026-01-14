@@ -10,8 +10,6 @@ It builds on standard Debian Linux tools and focuses on:
 
 BEAVER is not a new operating system.
 It installs cleanly **on existing Debian-based systems** (including Raspberry Pi OS), tested on Debian bookworm.
-
-BEAVER IS IN BETA TEST STATUS. Feedback is welcome.
 ---
 
 ## Philosophy
@@ -187,4 +185,13 @@ Expect changes, but not breakage.
 MIT License
 
 ---
-BEAVER deliberately avoids hidden behavior — everything can be inspected, configured, and debugged using standard Linux tools.
+
+##  Training & Workshops
+
+BEAVER is a skill-oriented system.
+While it can be explored independently, many users benefit from guided introduction.
+
+Workshops and group trainings may be offered, especially in cooperation with organizations supporting blind and deaf-blind users.
+These sessions can cover installation, daily workflows, accessibility concepts, and advanced usage.
+
+https://it.welebny.com/
