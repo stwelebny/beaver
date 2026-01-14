@@ -23,10 +23,9 @@ show_main_help() {
   have mbsync      && echo "  mbsync                Mail sync (isync)"
   have msmtp       && echo "  msmtp                 SMTP sender"
   have toot        && echo "  toot                  Mastodon client"
-  have ssh         && echo "  ssh                   Remote login client"
   echo
   echo "Topics:"
-  echo "  ai, internet, mail, social, ssh, storage"
+  echo "  ai, internet, mail, social"
 }
 
 help_ai() {
@@ -89,26 +88,6 @@ EOF
   fi
 }
 
-help_ssh() {
-  if have ssh; then
-    cat <<'EOF'
-SSH:
-  ssh user@host
-  ssh -p 2222 beaver@localhost    (your local Docker container)
-EOF
-  else
-    echo "SSH client not found."
-  fi
-}
-
-help_storage() {
-  cat <<'EOF'
-Storage / persistence:
-  Persistent user data lives under /userdata (Docker volume or disk partition).
-  Home is expected at /userdata/home/<user>.
-  beaver onboard checks/creates this layout.
-EOF
-}
 
 show_topic_help() {
   topic="${1:-}"
@@ -117,8 +96,6 @@ show_topic_help() {
     internet) help_internet ;;
     mail)     help_mail ;;
     social)   help_social ;;
-    ssh)      help_ssh ;;
-    storage)  help_storage ;;
     ""|*)
       echo "Unknown topic: ${topic:-<none>}"
       echo "Topics: ai, internet, mail, social, ssh, storage"
