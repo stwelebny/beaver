@@ -36,9 +36,9 @@ After installation, BEAVER gives you:
 
 ## Installation (GitHub-only)
 
-If you use Docker, check out the project in git and there is a Dockerfile in /docker.
+A. If you use Docker, check out the project in git and there is a Dockerfile in /docker.
 
-For installation on existing Debian Linux systems BEAVER is currently distributed via GitHub releases as `.deb` packages.
+B. For installation on existing Debian Linux systems BEAVER is currently distributed via GitHub releases as `.deb` packages:
 
 ### 1. Download the release packages
 
