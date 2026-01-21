@@ -8,7 +8,6 @@ It builds on standard Debian Linux tools and focuses on:
 - no GUI dependencies
 - full usability over SSH, serial, or local console
 
-It installs cleanly **on existing Debian-based systems** (including Raspberry Pi OS), tested on Debian bookworm.
 ---
 
 ## Philosophy
@@ -34,6 +33,8 @@ After installation, BEAVER gives you:
 ---
 
 ## Installation (GitHub-only)
+
+Beaver installs cleanly **on existing Debian-based systems** (including Raspberry Pi OS), tested on Debian bookworm.
 
 A. If you use Docker, check out the project in git and there is a Dockerfile in /docker.
 
