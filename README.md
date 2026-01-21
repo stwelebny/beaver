@@ -8,7 +8,6 @@ It builds on standard Debian Linux tools and focuses on:
 - no GUI dependencies
 - full usability over SSH, serial, or local console
 
-BEAVER is not a new operating system.
 It installs cleanly **on existing Debian-based systems** (including Raspberry Pi OS), tested on Debian bookworm.
 ---
 
