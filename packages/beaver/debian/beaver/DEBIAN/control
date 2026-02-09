@@ -1,0 +1,11 @@
+Package: beaver
+Version: 0.1.0
+Architecture: all
+Maintainer: SW <stefan@welebny.com>
+Installed-Size: 7
+Depends: beaver-core, beaver-core-config, beaver-mail, beaver-social, beaver-internet, beaver-ai
+Section: metapackages
+Priority: optional
+Description: Beaver meta-package (braille-first, terminal-only) for Raspberry Pi
+ Installs the full Beaver stack by depending on the core and feature-layer
+ packages. This package contains no files itself.

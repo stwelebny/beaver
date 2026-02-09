@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Tue, 13 Jan 2026 12:00:00 +0100
+Source: beaver-social
+Binary: beaver-social
+Architecture: all
+Version: 0.1.0
+Distribution: unstable
+Urgency: medium
+Maintainer: SW <stefan@welebny.com>
+Changed-By: SW <you@example.com>
+Description:
+ beaver-social - Beaver social tools (Mastodon CLI)
+Changes:
+ beaver-social (0.1.0) unstable; urgency=medium
+ .
+   * Initial release: install toot.
+Checksums-Sha1:
+ 390ce537d68e6f7b1b842e37d16475f07db7138b 1104 beaver-social_0.1.0_all.deb
+ 2213fea63979a686d8504863a45da0db0b2e540e 5413 beaver-social_0.1.0_arm64.buildinfo
+Checksums-Sha256:
+ 343c5195dee67e9a7fe77196314f2586b88c78fe65552395c719a77855eb3f27 1104 beaver-social_0.1.0_all.deb
+ e649681666aab057510007542050a92d71438d42f2cc74f4c5b348984c8751ce 5413 beaver-social_0.1.0_arm64.buildinfo
+Files:
+ 073470124de89939486be8d09abefe6e 1104 metapackages optional beaver-social_0.1.0_all.deb
+ 19c698a905a42388af1edc8d4314b53d 5413 metapackages optional beaver-social_0.1.0_arm64.buildinfo

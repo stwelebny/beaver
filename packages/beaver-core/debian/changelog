@@ -1,4 +1,4 @@
-beaver-core (0.1.0) unstable; urgency=medium
+beaver-core (0.1.0+dev1) unstable; urgency=medium
 
   * Initial release of Beaver core meta-package
   * Braille-first, terminal-only platform foundation

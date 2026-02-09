@@ -1,4 +1,4 @@
-beaver-mail (0.1.0) unstable; urgency=medium
+beaver-mail (0.1.0+dev1) unstable; urgency=medium
 
   * Initial release: install neomutt + isync + msmtp.
 

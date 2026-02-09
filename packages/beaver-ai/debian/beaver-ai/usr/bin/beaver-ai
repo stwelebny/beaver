@@ -1,0 +1,196 @@
+#!/bin/sh
+set -eu
+
+# beaver-ai: Braille-first terminal AI client (non-streaming)
+# Uses OpenAI Responses API:
+#   POST https://api.openai.com/v1/responses
+# Expects jq + curl.
+
+CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/beaver"
+STATE_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/beaver-ai"
+CONF="$CONFIG_DIR/ai.env"
+HIST="${STATE_DIR}/history.jsonl"
+
+mkdir -p "$CONFIG_DIR" "$STATE_DIR"
+touch "$HIST"
+chmod 600 "$HIST" 2>/dev/null || true
+
+load_conf() {
+  # Order of precedence:
+  # 1) OPENAI_API_KEY env
+  # 2) config file: ~/.config/beaver/ai.env
+  : "${OPENAI_API_KEY:=}"
+  : "${BEAVER_AI_MODEL:=gpt-5}"
+  : "${BEAVER_AI_INSTRUCTIONS:=You are a helpful assistant. Answer concisely unless asked otherwise.}"
+
+  if [ -z "$OPENAI_API_KEY" ] && [ -f "$CONF" ]; then
+    # shellcheck disable=SC1090
+    . "$CONF"
+  fi
+
+  if [ -z "${OPENAI_API_KEY:-}" ]; then
+    echo "ERROR: OPENAI_API_KEY not set." >&2
+    echo "Create $CONF with:" >&2
+    echo "  OPENAI_API_KEY='...'" >&2
+    echo "  BEAVER_AI_MODEL='gpt-5'   # optional" >&2
+    echo "Then: chmod 600 $CONF" >&2
+    exit 2
+  fi
+}
+
+usage() {
+  cat <<EOF
+Usage:
+  beaver-ai ask "your prompt"
+  echo "prompt" | beaver-ai ask
+  beaver-ai chat
+
+Config (recommended):
+  mkdir -p ~/.config/beaver
+  vi ~/.config/beaver/ai.env
+    OPENAI_API_KEY='...'
+    BEAVER_AI_MODEL='gpt-5'
+  chmod 600 ~/.config/beaver/ai.env
+
+Notes:
+  - Non-streaming by default (Braille-stable).
+  - Keeps a local history at: $HIST
+EOF
+}
+
+# Keep last N turns (simple, deterministic)
+HIST_MAX=20
+
+hist_append_user() {
+  # $1 = content
+  printf '%s\n' "$(jq -nc --arg role "user" --arg content "$1" '{role:$role,content:$content}')" >> "$HIST"
+}
+
+hist_append_assistant() {
+  # $1 = content
+  printf '%s\n' "$(jq -nc --arg role "assistant" --arg content "$1" '{role:$role,content:$content}')" >> "$HIST"
+}
+
+hist_compact() {
+  # Keep only last HIST_MAX lines
+  # (each line is one message JSON object)
+  tmp="${HIST}.tmp"
+  tail -n "$HIST_MAX" "$HIST" > "$tmp" || true
+  mv "$tmp" "$HIST"
+  chmod 600 "$HIST" 2>/dev/null || true
+}
+
+make_input_from_history() {
+  tail -n "$HIST_MAX" "$HIST" | jq -s '
+    map(
+      if .role == "assistant" then
+        { role: "assistant", content: [ { type: "output_text", text: .content } ] }
+      elif .role == "system" then
+        { role: "system", content: [ { type: "input_text", text: .content } ] }
+      else
+        { role: "user", content: [ { type: "input_text", text: .content } ] }
+      end
+    )
+  '
+}
+
+call_openai() {
+  # Uses history + current prompt already appended.
+  input_json="$(make_input_from_history)"
+
+  payload="$(jq -nc \
+    --arg model "$BEAVER_AI_MODEL" \
+    --arg instructions "$BEAVER_AI_INSTRUCTIONS" \
+    --argjson input "$input_json" \
+    '{model:$model, instructions:$instructions, input:$input}')"
+
+  curl -sS https://api.openai.com/v1/responses \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $OPENAI_API_KEY" \
+    -d "$payload"
+}
+
+extract_output_text() {
+  # Prefer output_text when available
+  jq -r '
+    if has("output_text") and (.output_text|type=="string") then .output_text
+    else
+      # fallback: try to collect text chunks from output
+      ( .output // [] )
+      | map(select(.type=="message"))
+      | map(.content // [])
+      | flatten
+      | map(select(.type=="output_text") | .text)
+      | join("")
+    end
+  '
+}
+
+cmd="${1:-}"
+case "$cmd" in
+  -h|--help|help|"")
+    usage
+    exit 0
+    ;;
+esac
+
+load_conf
+
+case "$cmd" in
+  ask)
+    shift || true
+    if [ "$#" -gt 0 ]; then
+      prompt="$*"
+    else
+      # Read all stdin
+      prompt="$(cat)"
+    fi
+
+    # Append, call, print, store
+    hist_append_user "$prompt"
+    hist_compact
+
+    resp="$(call_openai)"
+    out="$(printf '%s' "$resp" | extract_output_text)"
+
+    # If API returns an error, show it plainly
+    if [ -z "$out" ] || [ "$out" = "null" ]; then
+      echo "ERROR: No output text. Raw response:" >&2
+      printf '%s\n' "$resp" >&2
+      exit 3
+    fi
+
+    printf '%s\n' "$out"
+    hist_append_assistant "$out"
+    hist_compact
+    ;;
+  chat)
+    echo "beaver-ai chat (Ctrl-D to exit)."
+    echo "Model: ${BEAVER_AI_MODEL}"
+    while true; do
+      printf '> '
+      if ! IFS= read -r line; then
+        echo
+        break
+      fi
+      [ -n "$line" ] || continue
+      hist_append_user "$line"
+      hist_compact
+      resp="$(call_openai)"
+      out="$(printf '%s' "$resp" | extract_output_text)"
+      if [ -z "$out" ] || [ "$out" = "null" ]; then
+        echo "(no output; see raw error above)" >&2
+        printf '%s\n' "$resp" >&2
+        continue
+      fi
+      printf '%s\n' "$out"
+      hist_append_assistant "$out"
+      hist_compact
+    done
+    ;;
+  *)
+    echo "ERROR: Unknown command: $cmd" >&2
+    usage >&2
+    exit 2
+    ;;
+esac

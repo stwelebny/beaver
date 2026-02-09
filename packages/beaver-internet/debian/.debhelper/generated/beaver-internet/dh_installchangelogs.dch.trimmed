@@ -1,0 +1,5 @@
+beaver-internet (0.1.0) unstable; urgency=medium
+
+  * Initial release: install lynx + lynx-common.
+
+ -- SW <you@example.com>  Tue, 13 Jan 2026 12:00:00 +0100

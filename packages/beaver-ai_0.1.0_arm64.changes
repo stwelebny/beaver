@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Tue, 13 Jan 2026 12:00:00 +0100
+Source: beaver-ai
+Binary: beaver-ai
+Architecture: all
+Version: 0.1.0
+Distribution: unstable
+Urgency: medium
+Maintainer: SW <stefan@welebny.com>
+Changed-By: SW <stefan@welebny.com>
+Description:
+ beaver-ai  - Beaver AI CLI (Braille-first, terminal-only)
+Changes:
+ beaver-ai (0.1.0) unstable; urgency=medium
+ .
+   * Initial release: beaver-ai CLI tool.
+Checksums-Sha1:
+ 1381793858ba991262a5864a458cbdd1d0a3d869 3112 beaver-ai_0.1.0_all.deb
+ b841560e7790457a9d56429808830229791a0c8a 5393 beaver-ai_0.1.0_arm64.buildinfo
+Checksums-Sha256:
+ 7aff58435b22c84a7dcf16c49f14ddf3e180ec8019c79dabd2d18929b7bfb2e9 3112 beaver-ai_0.1.0_all.deb
+ 93abb53d54a649c6c6c7ce7013e10acf26bcd5682d8df0447719a1846ab9f405 5393 beaver-ai_0.1.0_arm64.buildinfo
+Files:
+ f374fc2c401a3fd67909ebe67b5a0797 3112 utils optional beaver-ai_0.1.0_all.deb
+ 1d5a48fd85beb2981d0a29fd5f90ed39 5393 utils optional beaver-ai_0.1.0_arm64.buildinfo

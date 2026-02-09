@@ -1,0 +1,11 @@
+Package: beaver-ai
+Version: 0.1.0
+Architecture: all
+Maintainer: SW <stefan@welebny.com>
+Installed-Size: 13
+Depends: ca-certificates, curl, jq
+Section: utils
+Priority: optional
+Description: Beaver AI CLI (Braille-first, terminal-only)
+ Deterministic terminal client for OpenAI via API. Designed for Braille-first workflows.
+ Stores local history under the user’s home directory.

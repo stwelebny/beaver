@@ -1,0 +1,6 @@
+beaver-core (0.1.0) unstable; urgency=medium
+
+  * Initial release of Beaver core meta-package
+  * Braille-first, terminal-only platform foundation
+
+ -- SW <you@example.com>  Fri, 12 Jan 2026 18:00:00 +0100

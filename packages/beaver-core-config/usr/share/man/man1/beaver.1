@@ -1,0 +1,50 @@
+.TH BEAVER 1 "February 2026" "Beaver" "User Commands"
+.SH NAME
+beaver \- Beaver command hub and help
+.SH SYNOPSIS
+.B beaver
+.br
+.B beaver help
+.RI [ topic ]
+.br
+.B beaver version
+.SH DESCRIPTION
+.B beaver
+is a small command hub for the Beaver environment. It prints an overview
+of installed tools and provides topic-specific help.
+.SH COMMANDS
+.TP
+.BR "(no arguments)"
+Show the main help overview and installed tool list.
+.TP
+.BR help " " [topic]
+Show help for a topic. Available topics:
+.BR ai ,
+.BR internet ,
+.BR mail ,
+.BR social .
+.TP
+.B version
+Show component versions (delegates to
+.BR beaver-version ).
+.SH TOPICS
+.TP
+.B ai
+Help for the Beaver AI client.
+.TP
+.B internet
+Help for text-based web browsing.
+.TP
+.B mail
+Help for mail sync and clients.
+.TP
+.B social
+Help for social client usage.
+.SH FILES
+.TP
+.I ~/.config/beaver/ai.env
+Configuration for the AI client (if installed).
+.SH SEE ALSO
+.BR beaver-help (1)
+.SH AUTHORS
+Beaver project.

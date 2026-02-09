@@ -1,0 +1,4 @@
+./usr/sbin/beaver-onboard
+./usr/bin/beaver-version
+./usr/bin/beaver
+./usr/bin/beaver-help

@@ -1,0 +1,5 @@
+{
+  "rootDir": ".aptly",
+  "downloadConcurrency": 4,
+  "architectures": ["arm64", "armhf", "all"]
+}

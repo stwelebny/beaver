@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Fri, 12 Jan 2026 18:30:00 +0100
+Source: beaver-core-config
+Binary: beaver-core-config
+Architecture: all
+Version: 0.1.0
+Distribution: unstable
+Urgency: medium
+Maintainer: Beaver Project <stefan@welebny.com>
+Changed-By: SW <you@example.com>
+Description:
+ beaver-core-config - Beaver core configuration, scripts, and first-boot setup
+Changes:
+ beaver-core-config (0.1.0) unstable; urgency=medium
+ .
+   * Initial Beaver core config package (scripts, defaults, onboarding)
+Checksums-Sha1:
+ 2e2c4e0d306bb46bcb5c8ed0700e32d34b14fd41 4320 beaver-core-config_0.1.0_all.deb
+ 7c304098a36fafc58d5e5fb4fda6ddf829196109 5438 beaver-core-config_0.1.0_arm64.buildinfo
+Checksums-Sha256:
+ d28c9fb7b76cdff93977304d8b9a71115844fa70062ce0289f8a34124b24a426 4320 beaver-core-config_0.1.0_all.deb
+ a1e11753b4864d8604511ccbeb204b27bd988a2de3bc2094560e8dc4f5a2c007 5438 beaver-core-config_0.1.0_arm64.buildinfo
+Files:
+ 3157f9684096beff55d59d8b9fde3e82 4320 admin optional beaver-core-config_0.1.0_all.deb
+ cffd4affb031267fc61437add5c3b939 5438 admin optional beaver-core-config_0.1.0_arm64.buildinfo

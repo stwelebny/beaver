@@ -32,41 +32,30 @@ After installation, BEAVER gives you:
 
 ---
 
-## Installation (GitHub-only)
+## Installation (Production)
 
-Beaver installs cleanly **on existing Debian-based systems** (including Raspberry Pi OS), tested on Debian bookworm.
+Production installs are supported **only on physical machines** running Debian-based systems
+(including Raspberry Pi OS), tested on Debian bookworm.
 
-A. If you use Docker, check out the project in git and there is a Dockerfile in /docker.
+### APT install + updates
 
-B. For installation on existing Debian Linux systems BEAVER is currently distributed via GitHub releases as `.deb` packages:
+1. Install the repo key:
 
-### 1. Download the release packages
+    curl -fsSL https://stwelebny.github.io/beaver/apt/beaver-dev-repo-public.gpg | sudo gpg --dearmor -o /usr/share/keyrings/beaver-archive-keyring.gpg
 
-From the release page:
+2. Add the repo:
 
-https://github.com/stwelebny/beaver/releases
+    echo "deb [signed-by=/usr/share/keyrings/beaver-archive-keyring.gpg] https://stwelebny.github.io/beaver/apt bookworm-dev main" | sudo tee /etc/apt/sources.list.d/beaver-dev.list
 
-Download **all** `.deb` files for the version.
+3. Update + install:
 
-Example files:
-- beaver_0.1.0_all.deb
-- beaver-ai_0.1.0_all.deb
-- beaver-core_0.1.0_all.deb
-- beaver-core-config_0.1.0_all.deb
-- beaver-internet_0.1.0_all.deb
-- beaver-mail_0.1.0_all.deb
-- beaver-social_0.1.0_all.deb
+    sudo apt update
+    sudo apt install beaver
 
----
+4. Later updates:
 
-### 2. Install on a Debian-based system
-
-From the directory containing the `.deb` files:
-
-sudo apt update  
-sudo apt install ./*.deb
-
-APT will automatically install required dependencies.
+    sudo apt update
+    sudo apt upgrade
 
 ---
 
@@ -77,6 +66,9 @@ After installation, type:
 beaver
 
 This shows the BEAVER help overview.
+For man pages:
+man beaver
+man beaver-help
 
 ### Available commands
 
@@ -88,9 +80,6 @@ This shows the BEAVER help overview.
 
 - beaver version  
   Show installed BEAVER components
-
-- beaver onboard [...]  
-  Initialize/check persistent userdata
 
 ### Topics
 
@@ -148,7 +137,7 @@ BEAVER_AI_MODEL="gpt-5"
 
 BEAVER never stores user data inside packages.
 
-Back ups should include:
+Backups should include:
 
 tar -czf beaver-backup.tgz \
   ~/.mail \
@@ -188,7 +177,7 @@ MIT License
 
 ---
 
-##  Training & Workshops
+## Training & Workshops
 
 BEAVER is a skill-oriented system.
 While it can be explored independently, many users benefit from guided introduction.
@@ -197,3 +186,9 @@ Workshops and group trainings may be offered, especially in cooperation with org
 These sessions can cover installation, daily workflows, accessibility concepts, and advanced usage.
 
 https://it.welebny.com/
+
+---
+
+## Development (Docker)
+
+Docker is for development and testing only. See the Dockerfile in `/docker`.

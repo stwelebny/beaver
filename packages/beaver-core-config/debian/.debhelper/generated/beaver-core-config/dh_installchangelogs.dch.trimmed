@@ -1,0 +1,5 @@
+beaver-core-config (0.1.0) unstable; urgency=medium
+
+  * Initial Beaver core config package (scripts, defaults, onboarding)
+
+ -- SW <you@example.com>  Fri, 12 Jan 2026 18:30:00 +0100
