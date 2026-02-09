@@ -1,0 +1,132 @@
+Package: beaver
+Priority: optional
+Section: metapackages
+Installed-Size: 7
+Maintainer: SW <stefan@welebny.com>
+Architecture: all
+Version: 0.1.0
+Depends: beaver-core, beaver-core-config, beaver-mail, beaver-social, beaver-internet, beaver-ai
+Filename: pool/main/b/beaver/beaver_0.1.0_all.deb
+Size: 960
+MD5sum: abfe1f0c4cbdd413a9e1001350905920
+SHA1: a766aedd12d0a13ee0bacea075fb9ff04d86d56c
+SHA256: 2f8e481380d3989cd9ce2474be66a1682f5b3b809240f1716ccd5ab05d4809df
+SHA512: 4ab739061ae8a339ad0fcdad12dadd9556d940127282278129f4e23b9da77bf0aab36f98940e060eda466e8d048b3be1172ad675291fdb51ab9d4ec4710c8380
+Description: Beaver meta-package (braille-first, terminal-only) for Raspberry Pi
+ Installs the full Beaver stack by depending on the core and feature-layer
+ packages. This package contains no files itself.
+
+Package: beaver-ai
+Priority: optional
+Section: utils
+Installed-Size: 13
+Maintainer: SW <stefan@welebny.com>
+Architecture: all
+Version: 0.1.0
+Depends: ca-certificates, curl, jq
+Filename: pool/main/b/beaver-ai/beaver-ai_0.1.0_all.deb
+Size: 2976
+MD5sum: c2e58b9b2d9a6377dc72208cbe797402
+SHA1: 1acb655f82e3d44c0095b6cc15a30d920665fe02
+SHA256: b6134f3570d410dc37e53a2d968bb2fac04bbe152cfb0455b8d6882295eb88bd
+SHA512: b78a721b25da27969ad593ef80ba93b36e5a0ef4de539b2b90d140480c8e78f79f8bf3901b9bf6c368ce33165086dd9f204dd92e465e0064dc30b7b207a96ec6
+Description: Beaver AI CLI (Braille-first, terminal-only)
+ Deterministic terminal client for OpenAI via API. Designed for Braille-first workflows.
+ Stores local history under the user’s home directory.
+
+Package: beaver-core
+Priority: optional
+Section: metapackages
+Installed-Size: 7
+Maintainer: Beaver Project <stefan@welebny.com>
+Architecture: all
+Version: 0.1.0
+Depends: brltty, locales, kbd, console-setup, sudo, man-db, manpages, info, less, tzdata, ca-certificates, rsync, curl, wget, jq, unzip, zip, usbutils, pciutils, lsof, psmisc, procps, htop, strace, file, bc, vim-tiny, nano, beaver-core-config
+Recommends: openssh-client, beaver-internet, beaver-mail, beaver-social
+Filename: pool/main/b/beaver-core/beaver-core_0.1.0_all.deb
+Size: 1304
+MD5sum: 7674b86bd3a2f4a95247e252b733aa52
+SHA1: f112d05b17a471c894721dd9ec7b048de5914f5b
+SHA256: b55442560eb24a03fa940d72f6014a8f1effffbc4150ba0fdebbe2a4daf4df5d
+SHA512: ae0a0e64eadd564d3ef3c7a5c964ac2da639c1f4d8696b663503a19dd4a24a8c5a6187e728d5de6e908e353e4d5b61adf4cbfa1222db4e01750d6d19168eb7b4
+Description: Beaver platform core (braille-first, terminal-only)
+ Beaver is a braille-first, terminal-only platform built on Raspberry Pi OS Lite.
+ .
+ This package installs the minimal core toolset required for a usable, supportable
+ console environment, including BRLTTY, essential documentation tools, and basic
+ diagnostics utilities. Networking and optional features are provided by other
+ Beaver meta-packages.
+Homepage: https://github.com/stwelebny/beaver
+
+Package: beaver-core-config
+Priority: optional
+Section: admin
+Installed-Size: 20
+Maintainer: Beaver Project <stefan@welebny.com>
+Architecture: all
+Version: 0.1.0
+Depends: systemd, brltty
+Filename: pool/main/b/beaver-core-config/beaver-core-config_0.1.0_all.deb
+Size: 4192
+MD5sum: 77e8d919fced87212016aa524ef8648c
+SHA1: 6554c16739938769be1d93863e31f2925e42f016
+SHA256: fdea68730a9c9428addfc8ea7217fed58b07c0e45c5b750497242536144e7aae
+SHA512: f58c3e582ec0cc191a00bdea8ef21698943ec9d5215453b22f39dba0c16c960b6925f9d0f8c57353642601437f5b160b08987c46b2b73ed608c5077fe6acd16e
+Description: Beaver core configuration, scripts, and first-boot setup
+ This package provides Beaver-specific configuration, first-boot onboarding,
+ diagnostics commands, and userdata/home separation setup.
+Homepage: https://github.com/stwelebny/beaver
+
+Package: beaver-internet
+Priority: optional
+Section: metapackages
+Installed-Size: 7
+Maintainer: SW <stefan@welebny.com>
+Architecture: all
+Version: 0.1.0
+Depends: lynx, lynx-common, ca-certificates
+Filename: pool/main/b/beaver-internet/beaver-internet_0.1.0_all.deb
+Size: 960
+MD5sum: b98b19eb827682385cf72afa4dc5fd6e
+SHA1: 9fba239aadbf231493b3e06aacfaebbeeace345e
+SHA256: be29d1d3ca9f67c8d9ddcacd9f5632c1244ac492cf04a6a0ec768a7e9ff58962
+SHA512: 71aca4e50bc6568ca81e1b6039b74bf132c630865ca43f586bd1c3f0214c36eb318dfecfefab179ae9cc8dd2d769488f80208a9623bde608d1c5168bfa9b4196
+Description: Beaver internet tools (Braille-first, terminal-only)
+ Installs a terminal-first web stack suitable for Braille use.
+ Includes lynx and required shared data.
+
+Package: beaver-mail
+Priority: optional
+Section: metapackages
+Installed-Size: 7
+Maintainer: SW <stefan@welebny.com>
+Architecture: all
+Version: 0.1.0
+Depends: neomutt, isync, msmtp, ca-certificates
+Filename: pool/main/b/beaver-mail/beaver-mail_0.1.0_all.deb
+Size: 958
+MD5sum: 3024985b31c8d41f7dcdbbad7b5ddfb8
+SHA1: b49d6448edfec390f6fc77eba78cfbe09ac89427
+SHA256: 286d3e04c252ce765f7ff48c853700a2b004a79405eb7793a1ba68fd9470bf3b
+SHA512: 3396d911640baad35021ba4d1245943215dce8ca4a701de56935257930fe690fb1c0fe30c1c993bce4052f7b92d4762a5d2316d3c79a7073bb484510d8f3243f
+Description: Beaver mail stack (neomutt + mbsync + msmtp)
+ Installs a Braille-friendly, terminal-only mail stack:
+ neomutt for reading, isync/mbsync for IMAP sync, and msmtp for sending.
+
+Package: beaver-social
+Priority: optional
+Section: metapackages
+Installed-Size: 7
+Maintainer: SW <stefan@welebny.com>
+Architecture: all
+Version: 0.1.0
+Depends: toot
+Filename: pool/main/b/beaver-social/beaver-social_0.1.0_all.deb
+Size: 908
+MD5sum: 3dd5652ff0f5586e550d337407385407
+SHA1: 60caa2f84e100d3bd8a6e627c5177791ffb72ef4
+SHA256: d439d85c06fc08ef3a859ece193b920b392c1ac06896251f633dc6519886f98f
+SHA512: 2f7c21c7edfe4e7f81d47a8faacc1d375baf5e325a2ebea43253e7202bf541ef4ec2b8b8f0921d097b2672de8f0b7540a9d3b51942a1d1541ff19f0d73ef92dc
+Description: Beaver social tools (Mastodon CLI)
+ Installs toot, a terminal Mastodon client suitable for Braille-first workflows.
+
