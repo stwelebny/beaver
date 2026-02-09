@@ -1,0 +1,17 @@
+Package: beaver-core
+Version: 0.1.0
+Architecture: all
+Maintainer: Beaver Project <stefan@welebny.com>
+Installed-Size: 7
+Depends: brltty, locales, kbd, console-setup, sudo, man-db, manpages, info, less, tzdata, ca-certificates, rsync, curl, wget, jq, unzip, zip, usbutils, pciutils, lsof, psmisc, procps, htop, strace, file, bc, vim-tiny, nano, beaver-core-config
+Recommends: openssh-client, beaver-internet, beaver-mail, beaver-social
+Section: metapackages
+Priority: optional
+Homepage: https://github.com/stwelebny/beaver
+Description: Beaver platform core (braille-first, terminal-only)
+ Beaver is a braille-first, terminal-only platform built on Raspberry Pi OS Lite.
+ .
+ This package installs the minimal core toolset required for a usable, supportable
+ console environment, including BRLTTY, essential documentation tools, and basic
+ diagnostics utilities. Networking and optional features are provided by other
+ Beaver meta-packages.

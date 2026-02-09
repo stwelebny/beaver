@@ -2,3 +2,4 @@ usr/sbin/beaver-onboard usr/sbin/
 usr/bin/beaver-version usr/bin/
 usr/bin/beaver usr/bin/
 usr/bin/beaver-help usr/bin/
+usr/share/man/man1/* usr/share/man/man1/

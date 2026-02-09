@@ -1,0 +1,10 @@
+Package: beaver-social
+Version: 0.1.0
+Architecture: all
+Maintainer: SW <stefan@welebny.com>
+Installed-Size: 7
+Depends: toot
+Section: metapackages
+Priority: optional
+Description: Beaver social tools (Mastodon CLI)
+ Installs toot, a terminal Mastodon client suitable for Braille-first workflows.

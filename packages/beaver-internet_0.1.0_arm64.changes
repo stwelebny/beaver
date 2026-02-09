@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Tue, 13 Jan 2026 12:00:00 +0100
+Source: beaver-internet
+Binary: beaver-internet
+Architecture: all
+Version: 0.1.0
+Distribution: unstable
+Urgency: medium
+Maintainer: SW <stefan@welebny.com>
+Changed-By: SW <you@example.com>
+Description:
+ beaver-internet - Beaver internet tools (Braille-first, terminal-only)
+Changes:
+ beaver-internet (0.1.0) unstable; urgency=medium
+ .
+   * Initial release: install lynx + lynx-common.
+Checksums-Sha1:
+ 9fc0415297b7988a2a1b263aca643fa8947d6216 1156 beaver-internet_0.1.0_all.deb
+ abc13fa55c77b9a39fc08c051a88e350a521e74c 5423 beaver-internet_0.1.0_arm64.buildinfo
+Checksums-Sha256:
+ c24401c43f9b3d558f4176e3e15a50b6ad38fcebe532af989f2c10800a501bcc 1156 beaver-internet_0.1.0_all.deb
+ 78696cfcaa8f002879d109e0187f49b314075e5c4f42b75ae126bf225a31a864 5423 beaver-internet_0.1.0_arm64.buildinfo
+Files:
+ fa57c2ac649933ee804ac66b9e7bde54 1156 metapackages optional beaver-internet_0.1.0_all.deb
+ c80905af9ea12bb5ac34419a6817445a 5423 metapackages optional beaver-internet_0.1.0_arm64.buildinfo

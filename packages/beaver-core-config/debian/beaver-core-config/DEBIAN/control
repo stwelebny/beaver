@@ -1,0 +1,12 @@
+Package: beaver-core-config
+Version: 0.1.0
+Architecture: all
+Maintainer: Beaver Project <stefan@welebny.com>
+Installed-Size: 20
+Depends: systemd, brltty
+Section: admin
+Priority: optional
+Homepage: https://github.com/stwelebny/beaver
+Description: Beaver core configuration, scripts, and first-boot setup
+ This package provides Beaver-specific configuration, first-boot onboarding,
+ diagnostics commands, and userdata/home separation setup.

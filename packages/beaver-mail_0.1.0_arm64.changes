@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Tue, 13 Jan 2026 12:00:00 +0100
+Source: beaver-mail
+Binary: beaver-mail
+Architecture: all
+Version: 0.1.0
+Distribution: unstable
+Urgency: medium
+Maintainer: SW <stefan@welebny.com>
+Changed-By: SW <stfan@welebny.com>
+Description:
+ beaver-mail - Beaver mail stack (neomutt + mbsync + msmtp)
+Changes:
+ beaver-mail (0.1.0) unstable; urgency=medium
+ .
+   * Initial release: install neomutt + isync + msmtp.
+Checksums-Sha1:
+ 72b6bb491d4b5584b8801be6ace373bf181e5032 1156 beaver-mail_0.1.0_all.deb
+ b809a0c67cb148621ef07b64712575016439bdd4 5403 beaver-mail_0.1.0_arm64.buildinfo
+Checksums-Sha256:
+ e5fb6aae61c9844642707325cf7c15486d89837048020692286d593c5db7e178 1156 beaver-mail_0.1.0_all.deb
+ 27ad80e250706a46f768176baaf439de42f3314a188b9d1d4bcf26aade8b25ed 5403 beaver-mail_0.1.0_arm64.buildinfo
+Files:
+ 7d6cc6a14a09f01787b7cdf74e865105 1156 metapackages optional beaver-mail_0.1.0_all.deb
+ 0783d421dca6ab76cc7e52c96c3c0183 5403 metapackages optional beaver-mail_0.1.0_arm64.buildinfo

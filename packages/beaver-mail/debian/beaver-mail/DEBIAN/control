@@ -1,0 +1,11 @@
+Package: beaver-mail
+Version: 0.1.0
+Architecture: all
+Maintainer: SW <stefan@welebny.com>
+Installed-Size: 7
+Depends: neomutt, isync, msmtp, ca-certificates
+Section: metapackages
+Priority: optional
+Description: Beaver mail stack (neomutt + mbsync + msmtp)
+ Installs a Braille-friendly, terminal-only mail stack:
+ neomutt for reading, isync/mbsync for IMAP sync, and msmtp for sending.

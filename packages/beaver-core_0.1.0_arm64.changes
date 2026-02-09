@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Fri, 12 Jan 2026 18:00:00 +0100
+Source: beaver-core
+Binary: beaver-core
+Architecture: all
+Version: 0.1.0
+Distribution: unstable
+Urgency: medium
+Maintainer: Beaver Project <stefan@welebny.com>
+Changed-By: SW <you@example.com>
+Description:
+ beaver-core - Beaver platform core (braille-first, terminal-only)
+Changes:
+ beaver-core (0.1.0) unstable; urgency=medium
+ .
+   * Initial release of Beaver core meta-package
+   * Braille-first, terminal-only platform foundation
+Checksums-Sha1:
+ 1bba395cbe1c658c143d17d85aefc2ee40b17ad7 1512 beaver-core_0.1.0_all.deb
+ 2f1f1cc5daf5d4a53ce175595474bb6787725b08 5403 beaver-core_0.1.0_arm64.buildinfo
+Checksums-Sha256:
+ 376122c52d9b5177f13be5906044f5aafad1ffc5de5f28348836a08812a6205f 1512 beaver-core_0.1.0_all.deb
+ 94d25453f70c592f491a6ce22fade452fcc3caf33e80d0c58d7096a670ab36a4 5403 beaver-core_0.1.0_arm64.buildinfo
+Files:
+ 3486a3f416c29bfe7068b5deeaefcf54 1512 metapackages optional beaver-core_0.1.0_all.deb
+ 25da8de93f94db1d392932519515c290 5403 metapackages optional beaver-core_0.1.0_arm64.buildinfo

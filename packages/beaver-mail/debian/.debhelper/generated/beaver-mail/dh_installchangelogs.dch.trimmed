@@ -1,0 +1,5 @@
+beaver-mail (0.1.0) unstable; urgency=medium
+
+  * Initial release: install neomutt + isync + msmtp.
+
+ -- SW <stfan@welebny.com>  Tue, 13 Jan 2026 12:00:00 +0100

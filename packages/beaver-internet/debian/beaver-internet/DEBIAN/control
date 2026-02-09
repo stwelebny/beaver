@@ -1,0 +1,11 @@
+Package: beaver-internet
+Version: 0.1.0
+Architecture: all
+Maintainer: SW <stefan@welebny.com>
+Installed-Size: 7
+Depends: lynx, lynx-common, ca-certificates
+Section: metapackages
+Priority: optional
+Description: Beaver internet tools (Braille-first, terminal-only)
+ Installs a terminal-first web stack suitable for Braille use.
+ Includes lynx and required shared data.

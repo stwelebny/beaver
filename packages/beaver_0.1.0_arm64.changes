@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Tue, 14 Jan 2026 12:00:00 +0000
+Source: beaver
+Binary: beaver
+Architecture: all
+Version: 0.1.0
+Distribution: unstable
+Urgency: medium
+Maintainer: SW <stefan@welebny.com>
+Changed-By: SW <you@example.com>
+Description:
+ beaver     - Beaver meta-package (braille-first, terminal-only) for Raspberry
+Changes:
+ beaver (0.1.0) unstable; urgency=medium
+ .
+   * Initial Beaver meta-package.
+Checksums-Sha1:
+ 2b929214df19243379ba5e3125e920dd23c04474 1164 beaver_0.1.0_all.deb
+ 420450eeef65c7f635aa88064bf5bc79e3325c73 5378 beaver_0.1.0_arm64.buildinfo
+Checksums-Sha256:
+ 6ab078b8854a0d4d8f12d5397bb0988ed1fa89dc9419a29d4be6ecbc3ba08c30 1164 beaver_0.1.0_all.deb
+ a6b8f388e696314f1980cee4eb72c65066024c80e625973985b14a933688830c 5378 beaver_0.1.0_arm64.buildinfo
+Files:
+ b388fe862083ca35c5ecb803cb497a51 1164 metapackages optional beaver_0.1.0_all.deb
+ 2f541ffc5987c5aab57c40fe767d4873 5378 metapackages optional beaver_0.1.0_arm64.buildinfo
