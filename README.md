@@ -32,13 +32,17 @@ After installation, BEAVER gives you:
 
 ---
 
-## Installation (GitHub-only)
+## Installation
 
 Beaver installs cleanly **on existing Debian-based systems** (including Raspberry Pi OS), tested on Debian bookworm.
 
 A. If you use Docker, check out the project in git and there is a Dockerfile in /docker.
 
-B. For installation on existing Debian Linux systems BEAVER is currently distributed via GitHub releases as `.deb` packages:
+B. For signed APT installs (recommended), see:
+
+docs/apt-repo.md
+
+C. For installation on existing Debian Linux systems BEAVER is currently distributed via GitHub releases as `.deb` packages:
 
 ### 1. Download the release packages
 
