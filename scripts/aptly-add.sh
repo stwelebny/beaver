@@ -8,7 +8,7 @@ fi
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 CONFIG="$ROOT_DIR/scripts/aptly-config.json"
-APTLY="aptly -config=$CONFIG"
+APTLY=(aptly -config="$CONFIG")
 
 REPO="$1"
 shift
@@ -20,4 +20,4 @@ fi
 
 cd "$ROOT_DIR"
 
-$APTLY repo add "$REPO" "$@"
+"${APTLY[@]}" repo add "$REPO" "$@"
