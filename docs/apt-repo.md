@@ -118,3 +118,4 @@ For fast iteration, use the dev channel instead:
 - `docs/apt/` is a generated artifact. Commit it to publish updates.
 - Keep the private GPG key secure. The public key is safe to publish.
 - The dev channel is for fast testing; stable should be used for releases.
+# main CI trigger Tue Feb 10 12:14:44 AM CET 2026
