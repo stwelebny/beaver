@@ -32,7 +32,8 @@ else
   "${APTLY[@]}" publish repo -batch "${GPG_ARGS[@]}" -distribution=bookworm-dev -component=main beaver-dev
 fi
 
-mkdir -p "$ROOT_DIR/docs/apt"
-rsync -a --delete "$ROOT_DIR/.aptly/public/" "$ROOT_DIR/docs/apt/"
+PUBLISH_DIR="${PUBLISH_DIR:-$ROOT_DIR/docs/apt}"
+mkdir -p "$PUBLISH_DIR"
+rsync -a --delete "$ROOT_DIR/.aptly/public/" "$PUBLISH_DIR/"
 
-echo "Published APT repo to $ROOT_DIR/docs/apt"
+echo "Published APT repo to $PUBLISH_DIR"
