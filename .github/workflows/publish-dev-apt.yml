@@ -20,7 +20,7 @@ jobs:
       - name: Install build + repo tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y aptly gnupg devscripts debhelper dh-make fakeroot lintian
+          sudo apt-get install -y aptly gnupg devscripts debhelper dh-make fakeroot lintian build-essential
 
       - name: Import GPG key
         env:
