@@ -78,12 +78,13 @@ jobs:
             exit 1
           fi
           ./scripts/aptly-init.sh
-          ./scripts/aptly-add.sh beaver-dev /tmp/beaver-debs/*.deb
           if [ "$DISTRO" = "bookworm" ]; then
+            ./scripts/aptly-add.sh beaver /tmp/beaver-debs/*.deb
             PUBLISH_DIR=/tmp/apt-out GPG_KEY="$KEY_ID" ./scripts/aptly-publish.sh
           else
+            ./scripts/aptly-add.sh beaver-dev /tmp/beaver-debs/*.deb
             PUBLISH_DIR=/tmp/apt-out GPG_KEY="$KEY_ID" ./scripts/aptly-publish-dev.sh
-           fi
+          fi
 
       - name: Checkout main
         uses: actions/checkout@v4
