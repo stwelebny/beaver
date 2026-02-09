@@ -1,0 +1,6 @@
+Origin: . bookworm-dev
+Label: . bookworm-dev
+Archive: bookworm-dev
+Suite: bookworm-dev
+Architecture: armhf
+Component: main
