@@ -85,28 +85,21 @@ jobs:
             PUBLISH_DIR=/tmp/apt-out GPG_KEY="$KEY_ID" ./scripts/aptly-publish-dev.sh
            fi
 
-      - name: Checkout main
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          path: main
-
-      - name: Sync dev repo into main/docs/apt (no delete)
+            - name: Sync dev repo into docs/apt
         run: |
           set -euo pipefail
-          mkdir -p main/docs/apt
-          rsync -a /tmp/apt-out/ main/docs/apt/
+          mkdir -p docs/apt
+          rsync -a /tmp/apt-out/ docs/apt/
 
       - name: Commit and push
         run: |
           set -euo pipefail
-          cd main
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if git status --porcelain | grep -q '^'; then
             git add docs/apt
             git commit -m "Publish dev APT repo (CI)"
-            git push origin main
+            git push origin dev
           else
             echo "No changes to publish."
           fi
