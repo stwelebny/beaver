@@ -5,6 +5,13 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 CONFIG="$ROOT_DIR/scripts/aptly-config.json"
 APTLY="aptly -config=$CONFIG"
 
+if ! command -v aptly >/dev/null 2>&1; then
+  echo "aptly not found in PATH."
+  exit 1
+fi
+
+cd "$ROOT_DIR"
+
 GPG_KEY="${GPG_KEY:-}"
 GPG_ARGS=()
 if [ -n "$GPG_KEY" ]; then

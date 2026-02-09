@@ -13,4 +13,11 @@ APTLY="aptly -config=$CONFIG"
 REPO="$1"
 shift
 
+if ! command -v aptly >/dev/null 2>&1; then
+  echo "aptly not found in PATH."
+  exit 1
+fi
+
+cd "$ROOT_DIR"
+
 $APTLY repo add "$REPO" "$@"
