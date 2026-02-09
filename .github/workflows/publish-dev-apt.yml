@@ -22,15 +22,31 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y aptly gnupg devscripts debhelper dh-make fakeroot lintian build-essential
 
+      - name: Select signing key + distro
+        run: |
+          if [ "${GITHUB_REF_NAME}" = "main" ]; then
+            echo "SIGNING_KEY_SECRET=APT_SIGNING_KEY_PROD" >> "$GITHUB_ENV"
+            echo "DISTRO=bookworm" >> "$GITHUB_ENV"
+          else
+            echo "SIGNING_KEY_SECRET=APT_SIGNING_KEY_DEV" >> "$GITHUB_ENV"
+            echo "DISTRO=bookworm-dev" >> "$GITHUB_ENV"
+          fi
+
       - name: Import GPG key
         env:
-          APT_SIGNING_KEY: ${{ secrets.APT_SIGNING_KEY_DEV }}
+          APT_SIGNING_KEY_DEV: ${{ secrets.APT_SIGNING_KEY_DEV }}
+          APT_SIGNING_KEY_PROD: ${{ secrets.APT_SIGNING_KEY_PROD }}
         run: |
-          if [ -z "${APT_SIGNING_KEY:-}" ]; then
-            echo "No GPG key available. Set secret APT_SIGNING_KEY_DEV."
+          if [ "$SIGNING_KEY_SECRET" = "APT_SIGNING_KEY_PROD" ]; then
+            KEY="$APT_SIGNING_KEY_PROD"
+          else
+            KEY="$APT_SIGNING_KEY_DEV"
+          fi
+          if [ -z "${KEY:-}" ]; then
+            echo "No GPG key available. Set $SIGNING_KEY_SECRET."
             exit 1
           fi
-          echo "$APT_SIGNING_KEY" | gpg --batch --import
+          printf '%s' "$KEY" | gpg --batch --import
           gpg --list-secret-keys --keyid-format LONG
 
       - name: Build .deb packages
@@ -63,7 +79,11 @@ jobs:
           fi
           ./scripts/aptly-init.sh
           ./scripts/aptly-add.sh beaver-dev /tmp/beaver-debs/*.deb
-          PUBLISH_DIR=/tmp/apt-dev GPG_KEY="$KEY_ID" ./scripts/aptly-publish-dev.sh
+          if [ "$DISTRO" = "bookworm" ]; then
+            PUBLISH_DIR=/tmp/apt-out GPG_KEY="$KEY_ID" ./scripts/aptly-publish.sh
+          else
+            PUBLISH_DIR=/tmp/apt-out GPG_KEY="$KEY_ID" ./scripts/aptly-publish-dev.sh
+           fi
 
       - name: Checkout main
         uses: actions/checkout@v4
