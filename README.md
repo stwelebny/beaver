@@ -81,9 +81,6 @@ man beaver-help
 - beaver version  
   Show installed BEAVER components
 
-- beaver onboard [...]  
-  Initialize/check persistent userdata
-
 ### Topics
 
 - ai        – AI access via beaver-ai  
