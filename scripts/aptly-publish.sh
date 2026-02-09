@@ -36,4 +36,4 @@ PUBLISH_DIR="${PUBLISH_DIR:-$ROOT_DIR/docs/apt}"
 mkdir -p "$PUBLISH_DIR"
 rsync -a --delete "$ROOT_DIR/.aptly/public/" "$PUBLISH_DIR/"
 
-echo "Published APT repo to $PUBLISH_DIR"
+echo "Published APT repo to $PUBLISH_DIR."
