@@ -1,0 +1,87 @@
+name: Publish dev APT repo
+
+on:
+  push:
+    branches: [dev]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  publish-dev:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout dev
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+
+      - name: Install build + repo tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y aptly gnupg devscripts debhelper dh-make fakeroot lintian
+
+      - name: Import GPG key
+        if: ${{ secrets.APT_SIGNING_KEY != '' }}
+        run: |
+          echo "${{ secrets.APT_SIGNING_KEY }}" | gpg --batch --import
+          gpg --list-secret-keys --keyid-format LONG
+
+      - name: Build .deb packages
+        run: |
+          set -euo pipefail
+          for pkg in \
+            packages/beaver-core-config \
+            packages/beaver-core \
+            packages/beaver-ai \
+            packages/beaver-internet \
+            packages/beaver-social \
+            packages/beaver-mail \
+            packages/beaver; do
+            (cd "$pkg" && dpkg-buildpackage -us -uc -b)
+          done
+
+      - name: Collect .deb files
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/beaver-debs
+          find packages -maxdepth 1 -type f -name "*.deb" -print -exec cp -v {} /tmp/beaver-debs/ \;
+
+      - name: Publish dev repo to temp dir
+        run: |
+          set -euo pipefail
+          KEY_ID="$(gpg --list-secret-keys --keyid-format LONG | awk '/^sec/ {print $2}' | head -n1 | cut -d/ -f2 || true)"
+          if [ -z "$KEY_ID" ]; then
+            echo "No GPG key available. Set secret APT_SIGNING_KEY."
+            exit 1
+          fi
+          ./scripts/aptly-init.sh
+          ./scripts/aptly-add.sh beaver-dev /tmp/beaver-debs/*.deb
+          PUBLISH_DIR=/tmp/apt-dev GPG_KEY="$KEY_ID" ./scripts/aptly-publish-dev.sh
+
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main
+
+      - name: Sync dev repo into main/docs/apt (no delete)
+        run: |
+          set -euo pipefail
+          mkdir -p main/docs/apt
+          rsync -a /tmp/apt-dev/ main/docs/apt/
+
+      - name: Commit and push
+        run: |
+          set -euo pipefail
+          cd main
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git status --porcelain | grep -q '^'; then
+            git add docs/apt
+            git commit -m "Publish dev APT repo (CI)"
+            git push origin main
+          else
+            echo "No changes to publish."
+          fi

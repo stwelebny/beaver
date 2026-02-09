@@ -66,6 +66,16 @@ This updates:
 
     docs/apt/
 
+### Dev-only publish (keeps stable intact)
+
+If you want to publish only the `bookworm-dev` repo without touching `bookworm`,
+use:
+
+    GPG_KEY=YOURKEYID ./scripts/aptly-publish-dev.sh
+
+This syncs only `dists/bookworm-dev` and the `pool` directory, without deleting
+existing stable content.
+
 ## 6) GitHub Pages
 
 In GitHub repo settings:
@@ -76,6 +86,17 @@ In GitHub repo settings:
 Your repo URL will look like:
 
     https://stwelebny.github.io/beaver/apt/
+
+## CI: Publish dev channel without overwriting stable
+
+A GitHub Actions workflow is included to publish `bookworm-dev` into `main/docs/apt`
+while leaving `bookworm` intact.
+
+Required secret (repo settings → Secrets and variables → Actions):
+
+- `APT_SIGNING_KEY` — your **ASCII-armored** private key
+
+Trigger: push to `dev` branch (or manual workflow dispatch).
 
 ## 7) Install on Raspberry Pi
 
