@@ -95,7 +95,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p main/docs/apt
-          rsync -a /tmp/apt-dev/ main/docs/apt/
+          rsync -a /tmp/apt-out/ main/docs/apt/
 
       - name: Commit and push
         run: |
