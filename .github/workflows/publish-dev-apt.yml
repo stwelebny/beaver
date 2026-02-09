@@ -80,21 +80,11 @@ jobs:
           ./scripts/aptly-init.sh
           if [ "$DISTRO" = "bookworm" ]; then
             ./scripts/aptly-add.sh beaver /tmp/beaver-debs/*.deb
-            PUBLISH_DIR=/tmp/apt GPG_KEY="$KEY_ID" ./scripts/aptly-publish.sh
+	    PUBLISH_DIR=docs/apt GPG_KEY="$KEY_ID" ./scripts/aptly-publish.sh
           else
             ./scripts/aptly-add.sh beaver-dev /tmp/beaver-debs/*.deb
-            PUBLISH_DIR=/tmp/apt GPG_KEY="$KEY_ID" ./scripts/aptly-publish-dev.sh
+            PUBLISH_DIR=docs/apt GPG_KEY="$KEY_ID" ./scripts/aptly-publish-dev.sh
           fi
-
-      - name: Inspect published output
-        run: |
-          set -euo pipefail
-          echo "Contents of /tmp/apt/dists:"
-          ls -la /tmp/apt/dists || true
-          echo "Contents of /tmp/apt/dists/bookworm:"
-          ls -la /tmp/apt/dists/bookworm || true
-          echo "Contents of /tmp/apt/dists/bookworm-dev:"
-          ls -la /tmp/apt/dists/bookworm-dev || true
 
       - name: Checkout main
         uses: actions/checkout@v4
@@ -106,7 +96,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p main/docs/apt
-          rsync -a /tmp/apt/ main/docs/apt/
+          rsync -a docs/apt/ main/docs/apt/
 
       - name: Commit and push
         run: |
