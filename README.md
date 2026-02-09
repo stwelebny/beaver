@@ -38,11 +38,28 @@ Beaver installs cleanly **on existing Debian-based systems** (including Raspberr
 
 A. If you use Docker, check out the project in git and there is a Dockerfile in /docker.
 
-B. For signed APT installs (recommended), see:
+B. For installation on existing Debian Linux systems BEAVER is currently distributed via GitHub releases as `.deb` packages:
 
-docs/apt-repo.md
+C. APT install + updates 
 
-C. For installation on existing Debian Linux systems BEAVER is currently distributed via GitHub releases as `.deb` packages:
+1) Install the repo key:
+
+    curl -fsSL https://stwelebny.github.io/beaver/apt/beaver-dev-repo-public.gpg | sudo gpg --dearmor -o /usr/share/keyrings/beaver-archive-keyring.gpg
+
+2) Add the repo:
+
+    echo "deb [signed-by=/usr/share/keyrings/beaver-archive-keyring.gpg] https://stwelebny.github.io/beaver/apt bookworm-dev main" | sudo tee /etc/apt/sources.list.d/beaver-dev.list
+
+3) Update + install:
+
+    sudo apt update
+    sudo apt install beaver
+
+4) Later updates:
+
+    sudo apt update
+    sudo apt upgrade
+
 
 ### 1. Download the release packages
 
