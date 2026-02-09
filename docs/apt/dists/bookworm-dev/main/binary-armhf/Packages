@@ -4,14 +4,14 @@ Section: metapackages
 Installed-Size: 7
 Maintainer: SW <stefan@welebny.com>
 Architecture: all
-Version: 0.1.0
+Version: 0.1.0+dev1
 Depends: beaver-core, beaver-core-config, beaver-mail, beaver-social, beaver-internet, beaver-ai
-Filename: pool/main/b/beaver/beaver_0.1.0_all.deb
-Size: 960
-MD5sum: abfe1f0c4cbdd413a9e1001350905920
-SHA1: a766aedd12d0a13ee0bacea075fb9ff04d86d56c
-SHA256: 2f8e481380d3989cd9ce2474be66a1682f5b3b809240f1716ccd5ab05d4809df
-SHA512: 4ab739061ae8a339ad0fcdad12dadd9556d940127282278129f4e23b9da77bf0aab36f98940e060eda466e8d048b3be1172ad675291fdb51ab9d4ec4710c8380
+Filename: pool/main/b/beaver/beaver_0.1.0+dev1_all.deb
+Size: 964
+MD5sum: 0bef5d5523dcb6e029355431f6d5bf9c
+SHA1: 7280ca09ade0fa02b94c26fa9773e57aa65d3f4e
+SHA256: 8e835cae55e44dbad2485566a8b843dde6167aa0137358d8581537f2a15d966b
+SHA512: b338c23edea0cb6438b5572edbcb86aba03e548d7bf58676a9f3976bf07a163114461522274265dba0f58fd5ccf994c4852b64d86c1fa1bf10a210689af5cd24
 Description: Beaver meta-package (braille-first, terminal-only) for Raspberry Pi
  Installs the full Beaver stack by depending on the core and feature-layer
  packages. This package contains no files itself.
@@ -22,14 +22,14 @@ Section: utils
 Installed-Size: 13
 Maintainer: SW <stefan@welebny.com>
 Architecture: all
-Version: 0.1.0
+Version: 0.1.0+dev1
 Depends: ca-certificates, curl, jq
-Filename: pool/main/b/beaver-ai/beaver-ai_0.1.0_all.deb
+Filename: pool/main/b/beaver-ai/beaver-ai_0.1.0+dev1_all.deb
 Size: 2976
-MD5sum: c2e58b9b2d9a6377dc72208cbe797402
-SHA1: 1acb655f82e3d44c0095b6cc15a30d920665fe02
-SHA256: b6134f3570d410dc37e53a2d968bb2fac04bbe152cfb0455b8d6882295eb88bd
-SHA512: b78a721b25da27969ad593ef80ba93b36e5a0ef4de539b2b90d140480c8e78f79f8bf3901b9bf6c368ce33165086dd9f204dd92e465e0064dc30b7b207a96ec6
+MD5sum: 21ded5f5015935269f692042f7882de5
+SHA1: f1dc9a22bc65bbc107e12521cbf596cc183eb795
+SHA256: 9e0edf0c4380138e3d02acafce82483d46e9cb6b3c482ad1045aaca718acb3da
+SHA512: 146da36ccab6e841992c0328f3fb78b3fad1b3c401e6faf551420fc52f48c8aedfa876311289979a928bac798c8a8ffeac19964ccb6d4f3167fd8d526a40e9a4
 Description: Beaver AI CLI (Braille-first, terminal-only)
  Deterministic terminal client for OpenAI via API. Designed for Braille-first workflows.
  Stores local history under the user’s home directory.
@@ -40,15 +40,15 @@ Section: metapackages
 Installed-Size: 7
 Maintainer: Beaver Project <stefan@welebny.com>
 Architecture: all
-Version: 0.1.0
+Version: 0.1.0+dev1
 Depends: brltty, locales, kbd, console-setup, sudo, man-db, manpages, info, less, tzdata, ca-certificates, rsync, curl, wget, jq, unzip, zip, usbutils, pciutils, lsof, psmisc, procps, htop, strace, file, bc, vim-tiny, nano, beaver-core-config
 Recommends: openssh-client, beaver-internet, beaver-mail, beaver-social
-Filename: pool/main/b/beaver-core/beaver-core_0.1.0_all.deb
-Size: 1304
-MD5sum: 7674b86bd3a2f4a95247e252b733aa52
-SHA1: f112d05b17a471c894721dd9ec7b048de5914f5b
-SHA256: b55442560eb24a03fa940d72f6014a8f1effffbc4150ba0fdebbe2a4daf4df5d
-SHA512: ae0a0e64eadd564d3ef3c7a5c964ac2da639c1f4d8696b663503a19dd4a24a8c5a6187e728d5de6e908e353e4d5b61adf4cbfa1222db4e01750d6d19168eb7b4
+Filename: pool/main/b/beaver-core/beaver-core_0.1.0+dev1_all.deb
+Size: 1314
+MD5sum: 9f54c46f2e3d4894d80d375d4c7abe0f
+SHA1: d0b5f89b22022d638363eb8b52779b191fc8d6d6
+SHA256: 4d67d2090b85333982985d86567bd34c88011f5d5e6958feeb1868203a8d5052
+SHA512: 2bdaaa31ac463df318ff6dbc1d5a9a2710e0bb8864031031a882b9026de2781a02e9780cc0158575a08ce597653232d30a4c18df713fa238b4d5ab9827b6d158
 Description: Beaver platform core (braille-first, terminal-only)
  Beaver is a braille-first, terminal-only platform built on Raspberry Pi OS Lite.
  .
@@ -64,14 +64,14 @@ Section: admin
 Installed-Size: 20
 Maintainer: Beaver Project <stefan@welebny.com>
 Architecture: all
-Version: 0.1.0
+Version: 0.1.0+dev1
 Depends: systemd, brltty
-Filename: pool/main/b/beaver-core-config/beaver-core-config_0.1.0_all.deb
-Size: 4192
-MD5sum: 77e8d919fced87212016aa524ef8648c
-SHA1: 6554c16739938769be1d93863e31f2925e42f016
-SHA256: fdea68730a9c9428addfc8ea7217fed58b07c0e45c5b750497242536144e7aae
-SHA512: f58c3e582ec0cc191a00bdea8ef21698943ec9d5215453b22f39dba0c16c960b6925f9d0f8c57353642601437f5b160b08987c46b2b73ed608c5077fe6acd16e
+Filename: pool/main/b/beaver-core-config/beaver-core-config_0.1.0+dev1_all.deb
+Size: 4200
+MD5sum: 29c23a2da4212ca3b1cb9eaab884a003
+SHA1: a09f8c2d419c6d9461ba61d11fd8a444da9bcf49
+SHA256: efd87eb64fed88db37f1a548b38f970e14e856c9f3aa46aad8db4e38d925108f
+SHA512: 0a62362e53cbf9aa9822dd23e8061ed493e8bae0a8e38f938b48a7a859167a908c140bb1c296f8588acc072cbcf8c26496a5ec89a564d5db46949e8360270358
 Description: Beaver core configuration, scripts, and first-boot setup
  This package provides Beaver-specific configuration, first-boot onboarding,
  diagnostics commands, and userdata/home separation setup.
@@ -83,14 +83,14 @@ Section: metapackages
 Installed-Size: 7
 Maintainer: SW <stefan@welebny.com>
 Architecture: all
-Version: 0.1.0
+Version: 0.1.0+dev1
 Depends: lynx, lynx-common, ca-certificates
-Filename: pool/main/b/beaver-internet/beaver-internet_0.1.0_all.deb
-Size: 960
-MD5sum: b98b19eb827682385cf72afa4dc5fd6e
-SHA1: 9fba239aadbf231493b3e06aacfaebbeeace345e
-SHA256: be29d1d3ca9f67c8d9ddcacd9f5632c1244ac492cf04a6a0ec768a7e9ff58962
-SHA512: 71aca4e50bc6568ca81e1b6039b74bf132c630865ca43f586bd1c3f0214c36eb318dfecfefab179ae9cc8dd2d769488f80208a9623bde608d1c5168bfa9b4196
+Filename: pool/main/b/beaver-internet/beaver-internet_0.1.0+dev1_all.deb
+Size: 970
+MD5sum: a3311cd1796699cd5a8cdc9fb06bb27d
+SHA1: 42cc6ed2468335ca4ebb4f48468adf6caf3f1b4f
+SHA256: 63dc16dc517785694482c4f32593a2b62c88449f3bae18724764e1c0b3dffa23
+SHA512: 591b39c97bca289427f80ebd2785cc7423b8030e09dfe19b6fbc2de51e3d723d7cdbfd6beefd19c818bd277f97f3aa0b14a6d6293e43f6980c2b96ad69bef215
 Description: Beaver internet tools (Braille-first, terminal-only)
  Installs a terminal-first web stack suitable for Braille use.
  Includes lynx and required shared data.
@@ -101,14 +101,14 @@ Section: metapackages
 Installed-Size: 7
 Maintainer: SW <stefan@welebny.com>
 Architecture: all
-Version: 0.1.0
+Version: 0.1.0+dev1
 Depends: neomutt, isync, msmtp, ca-certificates
-Filename: pool/main/b/beaver-mail/beaver-mail_0.1.0_all.deb
-Size: 958
-MD5sum: 3024985b31c8d41f7dcdbbad7b5ddfb8
-SHA1: b49d6448edfec390f6fc77eba78cfbe09ac89427
-SHA256: 286d3e04c252ce765f7ff48c853700a2b004a79405eb7793a1ba68fd9470bf3b
-SHA512: 3396d911640baad35021ba4d1245943215dce8ca4a701de56935257930fe690fb1c0fe30c1c993bce4052f7b92d4762a5d2316d3c79a7073bb484510d8f3243f
+Filename: pool/main/b/beaver-mail/beaver-mail_0.1.0+dev1_all.deb
+Size: 968
+MD5sum: 9884ce324dc0f3d1cf8466906d0f6e7a
+SHA1: 113a81e5a43cdd94b104c4c06f6e129ba859219a
+SHA256: c737501be28a43a698fca6a531bc004170328a63f94c4a24ff2415e1631453c3
+SHA512: 4be7e715ca528f86526006ef58e792d42f1217a85794d8bed5d0713f3de006dcd6dbd0f3e5737044f82610f383b54a6bacca4f49796d61e30b0954487fc7a956
 Description: Beaver mail stack (neomutt + mbsync + msmtp)
  Installs a Braille-friendly, terminal-only mail stack:
  neomutt for reading, isync/mbsync for IMAP sync, and msmtp for sending.
@@ -119,14 +119,14 @@ Section: metapackages
 Installed-Size: 7
 Maintainer: SW <stefan@welebny.com>
 Architecture: all
-Version: 0.1.0
+Version: 0.1.0+dev1
 Depends: toot
-Filename: pool/main/b/beaver-social/beaver-social_0.1.0_all.deb
-Size: 908
-MD5sum: 3dd5652ff0f5586e550d337407385407
-SHA1: 60caa2f84e100d3bd8a6e627c5177791ffb72ef4
-SHA256: d439d85c06fc08ef3a859ece193b920b392c1ac06896251f633dc6519886f98f
-SHA512: 2f7c21c7edfe4e7f81d47a8faacc1d375baf5e325a2ebea43253e7202bf541ef4ec2b8b8f0921d097b2672de8f0b7540a9d3b51942a1d1541ff19f0d73ef92dc
+Filename: pool/main/b/beaver-social/beaver-social_0.1.0+dev1_all.deb
+Size: 918
+MD5sum: 4884966e89737d4e8d357ecdc9a01cfc
+SHA1: 44aea6afbbcdace53088852a1054fe5f0a5993e5
+SHA256: 89d4edf5d48ab0c27d32d01f9efe8b44f640adc4387bdc43ad96bced5251f679
+SHA512: 74262334d32e204f1cff8d7a891e1acce717f56d1fe94506990d0535e10834e7310544dff12b4ac93539f04cac4455336eecd91ede718572fb9ad4459d8bb251
 Description: Beaver social tools (Mastodon CLI)
  Installs toot, a terminal Mastodon client suitable for Braille-first workflows.
 
