@@ -23,9 +23,14 @@ jobs:
           sudo apt-get install -y aptly gnupg devscripts debhelper dh-make fakeroot lintian
 
       - name: Import GPG key
-        if: ${{ secrets.APT_SIGNING_KEY != '' }}
+        env:
+          APT_SIGNING_KEY: ${{ secrets.APT_SIGNING_KEY_DEV }}
         run: |
-          echo "${{ secrets.APT_SIGNING_KEY }}" | gpg --batch --import
+          if [ -z "${APT_SIGNING_KEY:-}" ]; then
+            echo "No GPG key available. Set secret APT_SIGNING_KEY_DEV."
+            exit 1
+          fi
+          echo "$APT_SIGNING_KEY" | gpg --batch --import
           gpg --list-secret-keys --keyid-format LONG
 
       - name: Build .deb packages
