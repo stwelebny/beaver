@@ -86,6 +86,16 @@ jobs:
             PUBLISH_DIR=/tmp/apt-out GPG_KEY="$KEY_ID" ./scripts/aptly-publish-dev.sh
           fi
 
+      - name: Inspect published output
+        run: |
+          set -euo pipefail
+          echo "Contents of /tmp/apt-out/dists:"
+          ls -la /tmp/apt-out/dists || true
+          echo "Contents of /tmp/apt-out/dists/bookworm:"
+          ls -la /tmp/apt-out/dists/bookworm || true
+          echo "Contents of /tmp/apt-out/dists/bookworm-dev:"
+          ls -la /tmp/apt-out/dists/bookworm-dev || true
+
       - name: Checkout main
         uses: actions/checkout@v4
         with:
