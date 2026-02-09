@@ -35,7 +35,7 @@ jobs:
       - name: Import GPG key
         env:
           APT_SIGNING_KEY_DEV: ${{ secrets.APT_SIGNING_KEY_DEV }}
-          APT_SIGNING_KEY_PROD: ${{ secrets.APT_SIGNING_KEY_PROD }}
+          APT_SIGNING_KEY_PROD: ${{ secrets.APT_SIGNING_KEY_DEV }}
         run: |
           if [ "$SIGNING_KEY_SECRET" = "APT_SIGNING_KEY_PROD" ]; then
             KEY="$APT_SIGNING_KEY_PROD"
