@@ -79,7 +79,7 @@ jobs:
           ./scripts/aptly-init.sh
           if [ "$DISTRO" = "bookworm" ]; then
             ./scripts/aptly-add.sh beaver /tmp/beaver-debs/*.deb
-	    PUBLISH_DIR=docs/apt GPG_KEY="$KEY_ID" ./scripts/aptly-publish.sh
+            PUBLISH_DIR=docs/apt GPG_KEY="$KEY_ID" ./scripts/aptly-publish.sh
           else
             ./scripts/aptly-add.sh beaver-dev /tmp/beaver-debs/*.deb
             PUBLISH_DIR=docs/apt GPG_KEY="$KEY_ID" ./scripts/aptly-publish-dev.sh
