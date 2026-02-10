@@ -4,14 +4,14 @@ Section: metapackages
 Installed-Size: 7
 Maintainer: SW <stefan@welebny.com>
 Architecture: all
-Version: 0.2.0+dev1
+Version: 0.3.1+dev1
 Depends: beaver-core, beaver-core-config, beaver-mail, beaver-social, beaver-internet, beaver-ai
-Filename: pool/main/b/beaver/beaver_0.2.0+dev1_all.deb
-Size: 964
-MD5sum: 448c1993e6e59bbb5020be33367cc0e1
-SHA1: 53ea4c2d80b1e71b349140297147445f0ada4838
-SHA256: d4924380f7c2d6deadfc4c618fb776b93a1312c49eeb01fcc4c774a920ae3990
-SHA512: 34a8b870071ca7ade138b3a34ee1cd1edd4fcc84ab245a925387b08517e8c23fb67dd063c2a69f9b6979ff93665697ef51d410c21130f692de85878ff394d05a
+Filename: pool/main/b/beaver/beaver_0.3.1+dev1_all.deb
+Size: 970
+MD5sum: 7fe010717539c64139ae4f21316fc8e0
+SHA1: 27e42f22a543924de3d89a4c85891fb7a9bf6577
+SHA256: 9bc262b1f738b95d73309d55da18ab8fe0f174f5209bbd72e2cb9ecca8bb3367
+SHA512: 979c2f87e5603f833d98080edf3171c6927b0d280b21b122de4eb5d4d4070c01c0fc9c0c37459a32b45cafad8866e2283e4b018037f0c56f19c70c3081bd7715
 Description: Beaver meta-package (braille-first, terminal-only) for Raspberry Pi
  Installs the full Beaver stack by depending on the core and feature-layer
  packages. This package contains no files itself.
@@ -76,15 +76,15 @@ Section: metapackages
 Installed-Size: 7
 Maintainer: Beaver Project <stefan@welebny.com>
 Architecture: all
-Version: 0.2.0+dev1
-Depends: brltty, locales, kbd, console-setup, sudo, man-db, manpages, info, less, tzdata, ca-certificates, rsync, curl, wget, jq, unzip, zip, usbutils, pciutils, lsof, psmisc, procps, htop, strace, file, bc, vim-tiny, nano, beaver-core-config
+Version: 0.3.0+dev1
+Depends: brltty, locales, kbd, console-setup, sudo, man-db, manpages, info, less, tzdata, ca-certificates, rsync, curl, wget, jq, unzip, zip, usbutils, pciutils, lsof, psmisc, procps, htop, strace, file, bc, vim, nano, tmux, beaver-core-config
 Recommends: openssh-client, beaver-internet, beaver-mail, beaver-social
-Filename: pool/main/b/beaver-core/beaver-core_0.2.0+dev1_all.deb
-Size: 1314
-MD5sum: 81b36f64c809c7075a375d97878f043d
-SHA1: 48cfe6dd00e4b92b2066dbd5f57a9ba7250b81fa
-SHA256: 91001efd3123890e741d9871ed29f2366883f4dbe6e0a5f886fc2996900f517e
-SHA512: 5b07ee16ccac19474692297c4632a728524afd7e5100f9a9c0a0883dde1651d8bd1cb6afc73127c798660ae1612275229cbbf42ca85f1a169a1488f99fee6978
+Filename: pool/main/b/beaver-core/beaver-core_0.3.0+dev1_all.deb
+Size: 1276
+MD5sum: 28eae9b2cb5c7b05fa7330fbbcffe557
+SHA1: 1a112eaa72642ffd933441850d54f3435ef84f71
+SHA256: 0b3990a534fd1ca6276a41e36e957bf739b491840764c236b0b9b71a429c4390
+SHA512: 13b497bae1e9ccf94cf9009f645f3f17fb8c87ec649f78ca98135c42c267da4ecffcfa4264a7cc35fe4d55d051b55d0cf5e50b4ee9ae3ada94998de4edc1a085
 Description: Beaver platform core (braille-first, terminal-only)
  Beaver is a braille-first, terminal-only platform built on Raspberry Pi OS Lite.
  .
@@ -121,17 +121,17 @@ Homepage: https://github.com/stwelebny/beaver
 Package: beaver-core-config
 Priority: optional
 Section: admin
-Installed-Size: 24
+Installed-Size: 30
 Maintainer: Beaver Project <stefan@welebny.com>
 Architecture: all
-Version: 0.2.0+dev1
+Version: 0.3.1+dev1
 Depends: systemd, brltty
-Filename: pool/main/b/beaver-core-config/beaver-core-config_0.2.0+dev1_all.deb
-Size: 5288
-MD5sum: e808bc8fd715b943e91cdbcba908c176
-SHA1: a5efd034f6d6caea8133579134ad40f1d1683720
-SHA256: f474b1b2a21ff4a624e7aa029422cc4d09d1a87bcbbc6653c8a4b9004a6564fd
-SHA512: 19c6fd5a601426d90a04faeaa9ec63aff7341bef58db57f2443445b8534766038c379848aafe6df861cda550b96d4bf2a7943178a6837490666f242325491e05
+Filename: pool/main/b/beaver-core-config/beaver-core-config_0.3.1+dev1_all.deb
+Size: 7322
+MD5sum: 96161cf25fad07acb557c663ea06bbf3
+SHA1: 9807753b71eab7271bf6e3659cf5c3e6fc62d4c2
+SHA256: 48b926137b0c9f522194933f5af0bc09e9842a79faf496dcfdadc45f9c5ec03b
+SHA512: 89f2fbbd33a17c29f6f273686ae027f8b0bcfd4b310d94993468fcabbfd1afe547c244382330f20014e6f3bcd7dc4014efdc3a0033a8ab447428d33095ded32b
 Description: Beaver core configuration, scripts, and first-boot setup
  This package provides Beaver-specific configuration, first-boot onboarding,
  diagnostics commands, and userdata/home separation setup.
