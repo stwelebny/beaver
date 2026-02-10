@@ -7,11 +7,11 @@ Architecture: all
 Version: 0.3.1+dev1
 Depends: beaver-core, beaver-core-config, beaver-mail, beaver-social, beaver-internet, beaver-ai
 Filename: pool/main/b/beaver/beaver_0.3.1+dev1_all.deb
-Size: 972
-MD5sum: ae77fe296d3e0eed121ebbad6584ed02
-SHA1: 7a3850d667f9c9e529491d9f9f85d7f762fb76ee
-SHA256: 4358489e3461e292f3c811a7787752b4718ef6dee6e267824c666293b3111b17
-SHA512: d765e9b58044aab96afa307ff70fc8ecf21de3ce9d4f4bf447ad0c77b0cab33e17d4a4a9f850412fdf33a916cefcd0817bafc675865106fcdbb4e9227553d580
+Size: 970
+MD5sum: 062276288004a18a5f1e86a1022aa2eb
+SHA1: 9aca3d05b6d5511e3f97e5c5414413902522967b
+SHA256: 569229665a655fb67575819578ba99ea1f6a886b38894500edb7fd804b3bac2f
+SHA512: 60273ca00dbcfded74776c028b920ebce925bfd953435de8687b3e4ee650532ca2bf9a6514decfecb2cf5dd3d84ffbc9db46eed06cad11f0624efe1062737f5e
 Description: Beaver meta-package (braille-first, terminal-only) for Raspberry Pi
  Installs the full Beaver stack by depending on the core and feature-layer
  packages. This package contains no files itself.
@@ -81,10 +81,10 @@ Depends: brltty, locales, kbd, console-setup, sudo, man-db, manpages, info, less
 Recommends: openssh-client, beaver-internet, beaver-mail, beaver-social
 Filename: pool/main/b/beaver-core/beaver-core_0.3.0+dev1_all.deb
 Size: 1280
-MD5sum: f63dd4dc73d0bfadf3f8afaeb301fbcc
-SHA1: 164e02729bd0b651f89adc163d9bcfed411985bf
-SHA256: 9c3914c3fcbc68d6cb07761c38afb3e14080e0ad09d29f44045c34de2120d29c
-SHA512: f827c27103680db0dd45f8dcfb6c0f482e2918da19da25dd754d23796b9479ab86c8f73f3ee46efba1f51e1c4586989b9339cfeb8abab3b92df31a9a3d6ccb15
+MD5sum: adc27b9c8761b6c4c7917c027e6c953b
+SHA1: 3824d6b8d0cc11c04c3d5bd6ed2d164ab31cf1d4
+SHA256: 57fb1f24c1efed9bf48cb33cfbf16e3eca5ec9c84564ec6d1862753a645050d0
+SHA512: 1888f8b4be96862299454f4b5f278c50e34b4f19675ac04d498bcac687f9adb9f2418e276c50339a709596dc0fb68380d007485257200b14c10d6b4c95002555
 Description: Beaver platform core (braille-first, terminal-only)
  Beaver is a braille-first, terminal-only platform built on Raspberry Pi OS Lite.
  .
@@ -127,11 +127,11 @@ Architecture: all
 Version: 0.3.1+dev1
 Depends: systemd, brltty
 Filename: pool/main/b/beaver-core-config/beaver-core-config_0.3.1+dev1_all.deb
-Size: 7320
-MD5sum: 53e1bc1ba0d35b73b596b8a2a52fafa4
-SHA1: 40e445838a542ea781106dddd73d7d21b32901cf
-SHA256: b50f518473965ef72b3ca2aa59e9cb6d039b0d6bed2f7351e3243528578a56c4
-SHA512: d54bb9918769034930a1b0c14bb39bff0a78fadf65f22e5f3cbbe8f512134686c395273280e99b467e8271bd06ba19c4b7b50de876d6bb74b26f914ff2fda755
+Size: 7324
+MD5sum: a8961603d27c222f10a5d45a74d1bc36
+SHA1: 5c338b87dee25f76da5267e3f0879477ac450ada
+SHA256: f2689c215aca93f64ebeaad79f8257df8f3cfa98cbec0345274f5947f9c0cb59
+SHA512: 438260b506bf0b6daa4e14b79a9e74558a2b51e1473abe04b5855ac13b52cf20002eb6225e9e2c7b57532f472131f37c6f0391f85e29ea354b2db0db4d594f85
 Description: Beaver core configuration, scripts, and first-boot setup
  This package provides Beaver-specific configuration, first-boot onboarding,
  diagnostics commands, and userdata/home separation setup.
