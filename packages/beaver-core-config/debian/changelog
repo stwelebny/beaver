@@ -1,4 +1,4 @@
-beaver-core-config (0.1.0+dev1) unstable; urgency=medium
+beaver-core-config (0.2.0) unstable; urgency=medium
 
   * Initial Beaver core config package (scripts, defaults, onboarding)
 

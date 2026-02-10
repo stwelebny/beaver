@@ -1,4 +1,4 @@
-beaver-ai (0.1.0+dev1) unstable; urgency=medium
+beaver-ai (0.2.0) unstable; urgency=medium
 
   * Initial release: beaver-ai CLI tool.
 
