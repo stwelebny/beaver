@@ -4,14 +4,14 @@ Section: metapackages
 Installed-Size: 7
 Maintainer: SW <stefan@welebny.com>
 Architecture: all
-Version: 0.3.0+dev1
+Version: 0.3.1+dev1
 Depends: beaver-core, beaver-core-config, beaver-mail, beaver-social, beaver-internet, beaver-ai
-Filename: pool/main/b/beaver/beaver_0.3.0+dev1_all.deb
-Size: 972
-MD5sum: ceab2cde9d4c61b0ace82d18a0831132
-SHA1: ab74a7f1a40fa3aa27943cdb14fc04420472c8ee
-SHA256: b40b7760a57bcaa8d84ae20c5df47ba49a6687b060532ff6413651a7b196ebf3
-SHA512: 399aa45d84fe0e0978476dd00da2aabff834398a9cea8b444dfd44bdcbe06b1422d3a0d82eb6aead80be7569995b63e1540b28dfd011f9471399d749a3132a46
+Filename: pool/main/b/beaver/beaver_0.3.1+dev1_all.deb
+Size: 966
+MD5sum: 2605797b9cab9f6d2361fce4bb4b50e5
+SHA1: 069d0f1e4b0a158eec45bb0dd56e7cee368c41af
+SHA256: 22dbbf6ca65bba9df1333ea03606241e0a818f55973f7014e018048f8c4073b0
+SHA512: cd9a3bb06753741e2ff1aa404d34d1d0e17a066cb7b4977afb7300ff39852fd320487e259702c58559a306af2ded1016b5baf824d0394a481dfb090ff9d8302c
 Description: Beaver meta-package (braille-first, terminal-only) for Raspberry Pi
  Installs the full Beaver stack by depending on the core and feature-layer
  packages. This package contains no files itself.
@@ -80,11 +80,11 @@ Version: 0.3.0+dev1
 Depends: brltty, locales, kbd, console-setup, sudo, man-db, manpages, info, less, tzdata, ca-certificates, rsync, curl, wget, jq, unzip, zip, usbutils, pciutils, lsof, psmisc, procps, htop, strace, file, bc, vim, nano, tmux, beaver-core-config
 Recommends: openssh-client, beaver-internet, beaver-mail, beaver-social
 Filename: pool/main/b/beaver-core/beaver-core_0.3.0+dev1_all.deb
-Size: 1278
-MD5sum: 0783afe7c270dad3a20793064ab53485
-SHA1: 8c96aee586cd3b86e7b61f26d74c83e51f039791
-SHA256: b1ce4f9ce9a89d64179dce2c75860887cd0dd606ace5747536cff01ffd4bc248
-SHA512: 0a3fadac4f91db2bdc2c82705c270ae7cd53a4223c245777997d24ef768be0fb08f14d3beb8edcd7b944cec7213d9bfbf3e892ba5817d97a58ccf8c4eb5084be
+Size: 1282
+MD5sum: 5a7cfe6db43d9c1136d255b80fadc2a4
+SHA1: 1258108281a6314b11355b63c1f27abcc62c1839
+SHA256: a545f6f99b55feb7e2609d9150fb7b172eccaf624bd38986f9f85a2959309e1d
+SHA512: 1cd173b33e295eac7e2f6739753080b5ca7a9307ec72d236fb70cdc97eaab907ca92b6d68c8d65559be4fa4f20ce7a05443b4303c73b8b93bae4904e9883dc18
 Description: Beaver platform core (braille-first, terminal-only)
  Beaver is a braille-first, terminal-only platform built on Raspberry Pi OS Lite.
  .
@@ -124,14 +124,14 @@ Section: admin
 Installed-Size: 30
 Maintainer: Beaver Project <stefan@welebny.com>
 Architecture: all
-Version: 0.3.0+dev1
+Version: 0.3.1+dev1
 Depends: systemd, brltty
-Filename: pool/main/b/beaver-core-config/beaver-core-config_0.3.0+dev1_all.deb
-Size: 7346
-MD5sum: 590c5dd4cea77c1033184785bcb97cfb
-SHA1: b4c3580a1bb03cd62ff5f68c07f45f78389417b7
-SHA256: c2a2eed1312585d2a4ab208e549db8ecff23780fef65380189ca487ddfdecf87
-SHA512: 46f8f4de88a0b659d586753783706cad1de1a2422c2e6a467cd1763f58d9a53f4ebfec11f9764848d429ad24be57644a38916644ab211e0fd056d566ce17be88
+Filename: pool/main/b/beaver-core-config/beaver-core-config_0.3.1+dev1_all.deb
+Size: 7322
+MD5sum: ec9f9a043704e79f80523f9d2c6fcda1
+SHA1: e0907e29bdfad6a091a915304c498276054303d3
+SHA256: 8e27b83de55bcdaea5a2e7e8bd140942c7a92572d75c8a604d72c535073fc076
+SHA512: 13d3252609132b3db5fae839d36d68b16355f137082842e7302612051acccb028a1c5b0b94e9a59724ea4f38622a00695fad6f7a4c8d999c99b008194b3e1143
 Description: Beaver core configuration, scripts, and first-boot setup
  This package provides Beaver-specific configuration, first-boot onboarding,
  diagnostics commands, and userdata/home separation setup.
