@@ -1,6 +1,6 @@
 # BEAVER
 
-**BEAVER** is a **Braille-first, terminal-only Linux environment** designed for blind and especially deaf-blind users.
+**BEAVER** is a **Braille-first, terminal-only Linux environment** designed for blind and deaf-blind users.
 
 It builds on standard Debian Linux tools and focuses on:
 - predictability
@@ -45,7 +45,7 @@ Production installs are supported **only on physical machines** running Debian-b
 
 2. Add the repo:
 
-    echo "deb [signed-by=/usr/share/keyrings/beaver-archive-keyring.gpg] https://stwelebny.github.io/beaver/apt bookworm-dev main" | sudo tee /etc/apt/sources.list.d/beaver-dev.list
+    echo "deb [signed-by=/usr/share/keyrings/beaver-archive-keyring.gpg] https://stwelebny.github.io/beaver/apt bookworm main" | sudo tee /etc/apt/sources.list.d/beaver.list
 
 3. Update + install:
 
