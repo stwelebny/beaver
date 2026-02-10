@@ -1,5 +1,6 @@
-beaver-core-config (0.2.0+dev1) unstable; urgency=medium
+beaver-core-config (0.3.0+dev1) unstable; urgency=medium
 
-  * Initial Beaver core config package (scripts, defaults, onboarding)
+  * Add beginner help topics and tmux intro
+  * Add computer braille quick reference
 
- -- SW <you@example.com>  Fri, 12 Jan 2026 18:30:00 +0100
+ -- SW <you@example.com>  Tue, 10 Feb 2026 12:00:00 +0000

@@ -1,5 +1,5 @@
-beaver (0.2.0+dev1) unstable; urgency=medium
+beaver (0.3.0+dev1) unstable; urgency=medium
 
-  * Initial Beaver meta-package.
+  * Refresh core tools and help content
 
- -- SW <you@example.com>  Tue, 14 Jan 2026 12:00:00 +0000
+ -- SW <you@example.com>  Tue, 10 Feb 2026 12:00:00 +0000
