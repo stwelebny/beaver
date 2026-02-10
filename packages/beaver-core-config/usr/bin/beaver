@@ -206,16 +206,11 @@ EOF
 }
 
 help_braille() {
-  cat <<'EOF'
-Braille dot numbering (standard):
-  1 4
-  2 5
-  3 6
-  7 8
-
-Computer braille quick reference:
-  /usr/share/beaver/computer-braille-8dot.txt
-EOF
+  if command -v less >/dev/null 2>&1; then
+    less /usr/share/beaver/computer-braille-8dot.txt
+  else
+    cat /usr/share/beaver/computer-braille-8dot.txt
+  fi
 }
 
 help_tmux() {
