@@ -1,6 +1,6 @@
 # BEAVER
 
-**BEAVER** is a **Braille-first, terminal-only Linux environment** designed for blind and especially deaf-blind users.
+**BEAVER** is a **Braille-first, terminal-only Linux environment** designed for blind and deaf-blind users.
 
 It builds on standard Debian Linux tools and focuses on:
 - predictability
@@ -69,6 +69,19 @@ This shows the BEAVER help overview.
 For man pages:
 man beaver
 man beaver-help
+
+### Getting started (new users)
+
+Beaver includes short, beginner-friendly help topics:
+
+- beaver help start
+- beaver help linux
+- beaver help vi
+- beaver help braille
+- beaver help tmux
+
+Computer braille quick reference:
+/usr/share/beaver/computer-braille-8dot.txt
 
 ### Available commands
 

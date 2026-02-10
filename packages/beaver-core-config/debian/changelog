@@ -1,5 +1,5 @@
-beaver-core-config (0.2.0) unstable; urgency=medium
+beaver-core-config (0.3.1+dev1) unstable; urgency=medium
 
-  * Initial Beaver core config package (scripts, defaults, onboarding)
+  * Make braille help display the reference directly
 
- -- SW <you@example.com>  Fri, 12 Jan 2026 18:30:00 +0100
+ -- SW <you@example.com>  Tue, 10 Feb 2026 12:30:00 +0000

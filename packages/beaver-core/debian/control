@@ -37,8 +37,9 @@ Depends:
  strace,
  file,
  bc,
- vim-tiny,
+ vim,
  nano,
+ tmux,
  beaver-core-config
 Recommends:
  openssh-client, beaver-internet, beaver-mail, beaver-social

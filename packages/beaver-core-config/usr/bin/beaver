@@ -25,7 +25,7 @@ show_main_help() {
   have toot        && echo "  toot                  Mastodon client"
   echo
   echo "Topics:"
-  echo "  ai, internet, mail, social"
+  echo "  start, linux, vi, braille, tmux, ai, internet, mail, social"
 }
 
 help_ai() {
@@ -88,17 +88,183 @@ EOF
   fi
 }
 
+help_start() {
+  cat <<'EOF'
+Start here:
+  beaver help linux
+  beaver help vi
+  beaver help braille
+  beaver help tmux
+
+General tips:
+  man intro
+  man hier
+  man man
+EOF
+}
+
+help_linux() {
+  cat <<'EOF'
+Linux basics (short tutorial):
+
+Where you are and what's here:
+  pwd                Show current folder
+  ls                 List files
+  ls -l              Long listing
+  ls -a              Show hidden files
+
+Move around:
+  cd /path           Change folder
+  cd                Go home
+  cd -              Go back
+
+Read files:
+  cat file           Print file
+  less file          View with paging (q to quit)
+  head file          First lines
+  tail file          Last lines
+
+Copy/move/delete:
+  cp a b             Copy file
+  mv a b             Move/rename
+  rm file            Delete file
+  mkdir dir          Create folder
+
+Search:
+  grep text file     Find text in file
+  find . -name "*.txt"  Find files by name
+
+Manual pages (man):
+  man ls             Show manual for a command
+  man man            How to use man pages
+  man intro          Intro to section 1 (user commands)
+  man hier           Filesystem layout
+  man bash           Shell basics
+
+Pipes and redirect:
+  cmd1 | cmd2        Send output of cmd1 into cmd2
+  cmd > file         Write output to file (overwrite)
+  cmd >> file        Append output to file
+  cmd < file         Use file as input
+
+Looking for a tutorial package?
+  apt-cache search tutorial
+  If available on your system, consider:
+    debian-reference
+    debian-handbook
+EOF
+}
+
+help_vi() {
+  cat <<'EOF'
+vi / vim quick start:
+  Start editor:
+    vi <file>
+
+Modes:
+  Normal mode: default (commands)
+  Insert mode: type text
+  Visual mode: select text
+
+Enter/leave insert:
+  i       Insert before cursor
+  a       Insert after cursor
+  Esc     Back to normal
+
+Save/quit (normal mode):
+  :w      Save
+  :q      Quit
+  :wq     Save and quit
+  :q!     Quit without saving
+
+Move around (normal mode):
+  h j k l Left Down Up Right
+  w / b   Next/prev word
+  gg / G  Top / bottom of file
+
+Edit (normal mode):
+  x       Delete char
+  dd      Delete line
+  yy      Copy line
+  p       Paste after cursor
+
+Search:
+  /text   Search forward
+  n / N   Next/previous match
+
+Tutorial:
+  If vim is installed:
+    vimtutor
+
+Help:
+  :help
+  :help tutor
+  man vi
+  man vim
+  man vimtutor
+EOF
+}
+
+help_braille() {
+  if command -v less >/dev/null 2>&1; then
+    less /usr/share/beaver/computer-braille-8dot.txt
+  else
+    cat /usr/share/beaver/computer-braille-8dot.txt
+  fi
+}
+
+help_tmux() {
+  cat <<'EOF'
+tmux concept:
+  tmux keeps your terminal sessions alive.
+  It lets you run multiple tasks at once (windows/panes),
+  detach and reconnect later, and copy text inside the terminal.
+  Copy/paste may depend on your braille terminal setup.
+
+tmux quick intro:
+  Start a session:
+    tmux
+  Detach:
+    Ctrl-b d
+  Re-attach:
+    tmux attach
+  List sessions:
+    tmux ls
+
+Windows (press Ctrl-b, then key):
+  c     New window
+  n/p   Next/prev window
+  ,     Rename window
+  0-9   Switch to window #
+
+Panes (press Ctrl-b, then key):
+  "     Split horizontal
+  %     Split vertical
+  o     Next pane
+  x     Close pane
+  z     Zoom/unzoom pane
+
+Help:
+  ?     Show key bindings
+EOF
+}
+
 
 show_topic_help() {
   topic="${1:-}"
   case "$topic" in
+    start)   help_start ;;
+    linux)   help_linux ;;
+    vi)      help_vi ;;
+    braille) help_braille ;;
+    tmux)    help_tmux ;;
     ai)       help_ai ;;
     internet) help_internet ;;
     mail)     help_mail ;;
     social)   help_social ;;
     ""|*)
       echo "Unknown topic: ${topic:-<none>}"
-      echo "Topics: ai, internet, mail, social, ssh, storage"
+      echo "Topics: start, linux, vi, braille, tmux, ai, internet, mail, social"
       exit 1
       ;;
   esac
